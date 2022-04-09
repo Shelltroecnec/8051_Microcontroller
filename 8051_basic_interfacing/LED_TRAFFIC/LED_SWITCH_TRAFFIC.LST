@@ -1,0 +1,70 @@
+C51 COMPILER V9.50a   LED_SWITCH_TRAFFIC                                                   03/19/2022 14:05:06 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE LED_SWITCH_TRAFFIC
+OBJECT MODULE PLACED IN LED_SWITCH_TRAFFIC.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE LED_SWITCH_TRAFFIC.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sbit LED_RED = P1^0;
+   3          sbit LED_YELLOW = P1^1;
+   4          sbit LED_GREEN = P1^2;
+   5          sbit SWITCH1 = P3^2;
+   6          sbit SWITCH2 = P3^3;
+   7          
+   8          void delay(unsigned int a);
+   9          
+  10          void main()
+  11          {
+  12   1        //P1=0x00; // P1.0 as output
+  13   1        //P2=0xff; //P2 as Input
+  14   1        LED_RED=1;
+  15   1        LED_YELLOW=1;
+  16   1        LED_GREEN=1;
+  17   1        while(1)
+  18   1        {
+  19   2        if (SWITCH1==0)
+  20   2        {
+  21   3          LED_RED=0;
+  22   3          delay (1000);
+  23   3          LED_RED=1;
+  24   3          LED_YELLOW=0;
+  25   3          delay (1000);
+  26   3          LED_YELLOW=1;
+  27   3          LED_GREEN=0;
+  28   3          delay (1000);
+  29   3          LED_GREEN=1;
+  30   3        }
+  31   2        else if (SWITCH2==0)
+  32   2        {
+  33   3          LED_RED=1;
+  34   3          LED_YELLOW=1;
+  35   3          LED_GREEN=1;
+  36   3      }
+  37   2      }
+  38   1      }
+  39          
+  40          void delay(unsigned int a)
+  41          {
+  42   1        unsigned int b,i;
+  43   1        for(i=0;i<=a;i++)
+  44   1          for(b=0;b<=1275;b++);
+  45   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     79    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+C51 COMPILER V9.50a   LED_SWITCH_TRAFFIC                                                   03/19/2022 14:05:06 PAGE 2   
+
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
