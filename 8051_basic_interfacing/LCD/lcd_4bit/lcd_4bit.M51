@@ -1,0 +1,229 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/20/2022  14:09:06  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, lcd_4bit_Moving_Data.obj TO lcd_4bit RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  lcd_4bit_Moving_Data.obj (LCD_4BIT_MOVING_DATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  lcd_4bit (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         _DATA_GROUP_
+            IDATA   000EH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0049H     UNIT         ?PR?MAIN?LCD_4BIT_MOVING_DATA
+            CODE    0849H     0032H     UNIT         ?PR?_DISPLAY?LCD_4BIT_MOVING_DATA
+            CODE    087BH     0032H     UNIT         ?PR?_DELAY?LCD_4BIT_MOVING_DATA
+            CODE    08ADH     002DH     UNIT         ?PR?_LCD_DATA?LCD_4BIT_MOVING_DATA
+            CODE    08DAH     0027H     UNIT         ?CO?LCD_4BIT_MOVING_DATA
+            CODE    0901H     0021H     UNIT         ?PR?_LCD_CMD?LCD_4BIT_MOVING_DATA
+            CODE    0922H     0019H     UNIT         ?PR?LCD_INIT?LCD_4BIT_MOVING_DATA
+            CODE    093BH     0019H     UNIT         ?C?LIB_CODE
+            CODE    0954H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   lcd_4bit (?C_STARTUP)
+
+
+SEGMENT                                      DATA_GROUP 
+  +--> CALLED SEGMENT                      START    LENGTH
+----------------------------------------------------------
+?C_C51STARTUP                              -----    -----
+  +--> ?PR?MAIN?LCD_4BIT_MOVING_DATA
+
+?PR?MAIN?LCD_4BIT_MOVING_DATA              -----    -----
+  +--> ?PR?LCD_INIT?LCD_4BIT_MOVING_DATA
+  +--> ?CO?LCD_4BIT_MOVING_DATA
+  +--> ?PR?_DISPLAY?LCD_4BIT_MOVING_DATA
+  +--> ?PR?_LCD_CMD?LCD_4BIT_MOVING_DATA
+  +--> ?PR?_DELAY?LCD_4BIT_MOVING_DATA
+
+?PR?LCD_INIT?LCD_4BIT_MOVING_DATA          -----    -----
+  +--> ?PR?_LCD_CMD?LCD_4BIT_MOVING_DATA
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/20/2022  14:09:06  PAGE 2
+
+
+?PR?_LCD_CMD?LCD_4BIT_MOVING_DATA          0008H    0001H
+  +--> ?PR?_DELAY?LCD_4BIT_MOVING_DATA
+
+?PR?_DISPLAY?LCD_4BIT_MOVING_DATA          0008H    0005H
+  +--> ?PR?_LCD_DATA?LCD_4BIT_MOVING_DATA
+
+?PR?_LCD_DATA?LCD_4BIT_MOVING_DATA         000DH    0001H
+  +--> ?PR?_DELAY?LCD_4BIT_MOVING_DATA
+
+
+
+SYMBOL TABLE OF MODULE:  lcd_4bit (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0954H         SEGMENT       ?C_C51STARTUP
+  I:000EH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0957H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0954H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0954H         LINE#         133
+  C:0956H         LINE#         134
+  C:0957H         LINE#         135
+  C:0958H         LINE#         136
+  C:095AH         LINE#         185
+  C:095DH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        LCD_4BIT_MOVING_DATA
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0887H         PUBLIC        _delay
+  B:00A0H.5       PUBLIC        EN
+  B:00A0H.4       PUBLIC        RS
+  C:0800H         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/20/2022  14:09:06  PAGE 3
+
+
+  C:08ADH         PUBLIC        _lcd_data
+  C:0901H         PUBLIC        _lcd_cmd
+  C:0922H         PUBLIC        lcd_init
+  C:0849H         PUBLIC        _display
+  -------         PROC          MAIN
+  C:0800H         LINE#         14
+  C:0800H         LINE#         15
+  C:0803H         LINE#         17
+  C:080CH         LINE#         18
+  C:0811H         LINE#         19
+  C:081AH         LINE#         20
+  C:0821H         LINE#         21
+  C:0826H         LINE#         22
+  C:082BH         LINE#         23
+  C:0834H         LINE#         24
+  C:0839H         LINE#         25
+  C:0842H         LINE#         26
+  C:0842H         LINE#         27
+  C:0842H         LINE#         28
+  C:0847H         LINE#         29
+  -------         ENDPROC       MAIN
+  -------         PROC          LCD_INIT
+  C:0922H         LINE#         32
+  C:0922H         LINE#         33
+  C:0927H         LINE#         34
+  C:092CH         LINE#         35
+  C:0931H         LINE#         36
+  C:0936H         LINE#         37
+  -------         ENDPROC       LCD_INIT
+  -------         PROC          _LCD_CMD
+  D:0008H         SYMBOL        cmd
+  C:0901H         LINE#         40
+  C:0903H         LINE#         41
+  C:090CH         LINE#         42
+  C:090CH         LINE#         44
+  C:090CH         LINE#         45
+  C:090FH         LINE#         46
+  C:0911H         LINE#         47
+  C:0914H         LINE#         49
+  C:0916H         LINE#         50
+  C:0916H         LINE#         52
+  C:0916H         LINE#         53
+  C:0919H         LINE#         54
+  C:091BH         LINE#         55
+  -------         ENDPROC       _LCD_CMD
+  -------         PROC          _LCD_DATA
+  D:000DH         SYMBOL        d
+  C:08ADH         LINE#         58
+  C:08AFH         LINE#         59
+  C:08BCH         LINE#         60
+  C:08BEH         LINE#         62
+  C:08BEH         LINE#         63
+  C:08C1H         LINE#         64
+  C:08C3H         LINE#         65
+  C:08C6H         LINE#         67
+  C:08CCH         LINE#         68
+  C:08CEH         LINE#         70
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/20/2022  14:09:06  PAGE 4
+
+
+  C:08CEH         LINE#         71
+  C:08D1H         LINE#         72
+  C:08D3H         LINE#         73
+  -------         ENDPROC       _LCD_DATA
+  -------         PROC          _DISPLAY
+  D:0008H         SYMBOL        p
+  -------         DO            
+  D:000BH         SYMBOL        i
+  -------         ENDDO         
+  C:0849H         LINE#         76
+  C:084FH         LINE#         78
+  C:085FH         LINE#         79
+  C:0870H         LINE#         80
+  C:087AH         LINE#         81
+  -------         ENDPROC       _DISPLAY
+  C:0881H         SYMBOL        L?0025
+  C:0883H         SYMBOL        L?0026
+  -------         PROC          L?0024
+  -------         ENDPROC       L?0024
+  C:0881H         SYMBOL        L?0025
+  C:0883H         SYMBOL        L?0026
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0887H         LINE#         83
+  C:0887H         LINE#         85
+  C:0897H         LINE#         86
+  C:08A5H         LINE#         87
+  C:08ACH         LINE#         88
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        LCD_4BIT_MOVING_DATA
+
+  -------         MODULE        ?C?CLDPTR
+  C:093BH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 014AH BYTE (16%) *
+******************************************************************************
+
+Program Size: data=15.0 xdata=0 code=355
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

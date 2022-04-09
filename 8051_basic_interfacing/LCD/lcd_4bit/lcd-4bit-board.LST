@@ -1,0 +1,111 @@
+C51 COMPILER V9.50a   LCD_4BIT_BOARD                                                       03/20/2022 13:58:47 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE LCD_4BIT_BOARD
+OBJECT MODULE PLACED IN lcd-4bit-board.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lcd-4bit-board.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #define Data P2               //LCD data lines connected to port 1
+   3          
+   4          void lcd_init();
+   5          void lcd_cmd(char cmd);
+   6          void lcd_data(char d);
+   7          void display(char *p);
+   8          void delay(int t);
+   9          
+  10          sbit RS = P2^4;
+  11          //sbit RW = P1^1;
+  12          sbit EN = P2^5;
+  13          
+  14          void main(){
+  15   1        lcd_init();
+  16   1        //lcd_data('8');
+  17   1        display("Embedded");
+  18   1        lcd_cmd(0xC0);
+  19   1        display("Technosolutions");
+  20   1        delay(2);
+  21   1        lcd_cmd(0x01);
+  22   1        lcd_cmd(0x80);
+  23   1        display("Shahid");
+  24   1        lcd_cmd(0xC0);
+  25   1        display("Hashmi");
+  26   1        while(1);
+  27   1      }
+  28          
+  29          void lcd_init(){
+  30   1        lcd_cmd(0x28);              //8-bit data mode -->     //For 4-bit data mode - 0x28
+  31   1        lcd_cmd(0x01);              //Clear Display 
+  32   1        lcd_cmd(0x0E);              //Display On and Cursor blinking -->      //For Cursor off - 0x0C ; for cursor On - 0x0
+             -E
+  33   1        lcd_cmd(0x06);              //Entry Mode
+  34   1        lcd_cmd(0x80);              //First Line of LCD -->     //For 2nd line - 0xC0
+  35   1      }
+  36          
+  37          void lcd_cmd(char cmd){
+  38   1        Data = ((cmd>>4) & 0x0F);       //Send upper 4-bit command to Port where lcd is connected
+  39   1        RS = 0;                     //RS 0 for commmand register
+  40   1        //RW = 0;                     //Write operation
+  41   1        EN = 1;                     //EN goes high to low to write data into lcd
+  42   1        delay(10);
+  43   1        EN = 0;
+  44   1        delay(10);
+  45   1        
+  46   1        Data = (cmd & 0x0F);    //Send lower 4-bit command to Port where lcd is connected
+  47   1        RS = 0;                     //RS 0 for commmand register
+  48   1        //RW = 0;                     //Write operation
+  49   1        EN = 1;                     //EN goes high to low to write data into lcd
+  50   1        delay(10);
+  51   1        EN = 0;
+  52   1        delay(10);
+  53   1      }
+  54          
+C51 COMPILER V9.50a   LCD_4BIT_BOARD                                                       03/20/2022 13:58:47 PAGE 2   
+
+  55          void lcd_data(char d){
+  56   1        Data = ((d>>4) & 0x0F);         //Send upper 4-bit data to Port where lcd is connected
+  57   1        RS = 1;                     //RS 1 for data register
+  58   1        //RW = 0;                     //Write operation
+  59   1        EN = 1;                     //EN goes high to low to write data into lcd
+  60   1        delay(10);
+  61   1        EN = 0;
+  62   1        delay(10);
+  63   1        
+  64   1        Data = (d & 0x0F);      //Send lower 4-bit data to Port where lcd is connected
+  65   1        RS = 1;                     //RS 1 for data register
+  66   1        //RW = 0;                     //Write operation
+  67   1        EN = 1;                     //EN goes high to low to write data into lcd
+  68   1        delay(10);
+  69   1        EN = 0;
+  70   1        delay(10);
+  71   1      }
+  72          
+  73          void display(char *p){
+  74   1        int i;
+  75   1        for(i=0;*p!='\0';i++){
+  76   2          lcd_data(*p++);
+  77   2        }
+  78   1      }
+  79          
+  80          void delay(int t){
+  81   1        int i,j;
+  82   1        for(i=0;i<=t;i++){
+  83   2          for(j=0;j<=1275;j++);
+  84   2        }
+  85   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    271    ----
+   CONSTANT SIZE    =     39    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       7
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

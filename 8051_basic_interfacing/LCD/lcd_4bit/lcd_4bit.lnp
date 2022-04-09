@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"lcd_4bit_Moving_Data.obj" 
+TO "lcd_4bit" 
+RAMSIZE(256) 
