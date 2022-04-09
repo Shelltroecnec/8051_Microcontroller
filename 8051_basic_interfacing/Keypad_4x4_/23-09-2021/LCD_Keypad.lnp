@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"keypad.obj" 
+TO "LCD_Keypad" 
+RAMSIZE(256) 

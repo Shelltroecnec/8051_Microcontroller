@@ -1,0 +1,189 @@
+C51 COMPILER V9.50a   KEYPAD                                                               09/23/2021 12:10:53 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE KEYPAD
+OBJECT MODULE PLACED IN keypad.OBJ
+COMPILER INVOKED BY: C:\Program Files (x86)\C51\BIN\C51.EXE keypad.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include"LCD.h"
+   3          
+   4          sbit C1 = P1^4;
+   5          sbit C2 = P1^5;
+   6          sbit C3 = P1^6;
+   7          sbit C4 = P1^7;
+   8          
+   9          sbit R1 = P1^0;
+  10          sbit R2 = P1^1;
+  11          sbit R3 = P1^2;
+  12          sbit R4 = P1^3;
+  13          
+  14          unsigned char KEYPAD(void)
+  15          {
+  16   1      //all columns at logic 1
+  17   1      C1 = C2 = C3 = C4 = 1;
+  18   1       
+  19   1      //logic for row 1
+  20   1      R1 = 0;
+  21   1      R2 = R3 = R4 = 1;
+  22   1       
+  23   1      if(C1 == 0)
+  24   1      {
+  25   2      LCD_DATA('7');
+  26   2      delay(5);
+  27   2      while(C1 == 0); 
+  28   2      } 
+  29   1      
+  30   1      if(C2 == 0)
+  31   1      {
+  32   2      LCD_DATA('8');
+  33   2      delay(5);
+  34   2      while(C2 == 0); 
+  35   2      }
+  36   1      
+  37   1      if(C3 == 0)
+  38   1      {
+  39   2      LCD_DATA('9');
+  40   2      delay(5);
+  41   2      while(C3 == 0); 
+  42   2      }
+  43   1      
+  44   1      if(C4 == 0)
+  45   1      {
+  46   2      LCD_DATA('%');
+  47   2      delay(5);
+  48   2      while(C4 == 0); 
+  49   2      }
+  50   1      
+  51   1      //logic for row 2
+  52   1      R2 = 0;
+  53   1      R1 = R3 = R4 = 1;
+  54   1       
+  55   1      if(C1 == 0)
+C51 COMPILER V9.50a   KEYPAD                                                               09/23/2021 12:10:53 PAGE 2   
+
+  56   1      {
+  57   2      LCD_DATA('4');
+  58   2      delay(5);
+  59   2      while(C1 == 0); 
+  60   2      } 
+  61   1      
+  62   1      if(C2 == 0)
+  63   1      {
+  64   2      LCD_DATA('5');
+  65   2      delay(5);
+  66   2      while(C2 == 0); 
+  67   2      }
+  68   1      
+  69   1      if(C3 == 0)
+  70   1      {
+  71   2      LCD_DATA('6');
+  72   2      delay(5);
+  73   2      while(C3 == 0); 
+  74   2      }
+  75   1      
+  76   1      if(C4 == 0)
+  77   1      {
+  78   2      LCD_DATA('X');
+  79   2      delay(5);
+  80   2      while(C4 == 0); 
+  81   2      }
+  82   1      
+  83   1      //logic for row 3
+  84   1      R3 = 0;
+  85   1      R1 = R2 = R4 = 1;
+  86   1       
+  87   1      if(C1 == 0)
+  88   1      {
+  89   2      LCD_DATA('1');
+  90   2      delay(5);
+  91   2      while(C1 == 0); 
+  92   2      } 
+  93   1      
+  94   1      if(C2 == 0)
+  95   1      {
+  96   2      LCD_DATA('2');
+  97   2      delay(5);
+  98   2      while(C2 == 0); 
+  99   2      }
+ 100   1      
+ 101   1      if(C3 == 0)
+ 102   1      {
+ 103   2      LCD_DATA('3');
+ 104   2      delay(5);
+ 105   2      while(C3 == 0); 
+ 106   2      }
+ 107   1      
+ 108   1      if(C4 == 0)
+ 109   1      {
+ 110   2      LCD_DATA('-');
+ 111   2      delay(5);
+ 112   2      while(C4 == 0); 
+ 113   2      }
+ 114   1      
+ 115   1      //logic for row 4
+ 116   1      R4 = 0;
+ 117   1      R2 = R3 = R1 = 1;
+C51 COMPILER V9.50a   KEYPAD                                                               09/23/2021 12:10:53 PAGE 3   
+
+ 118   1       
+ 119   1      if(C1 == 0)
+ 120   1      {
+ 121   2      LCD_DATA('@');
+ 122   2      delay(5);
+ 123   2      while(C1 == 0); 
+ 124   2      } 
+ 125   1      
+ 126   1      if(C2 == 0)
+ 127   1      {
+ 128   2      LCD_DATA('0');
+ 129   2      delay(5);
+ 130   2      while(C2 == 0); 
+ 131   2      }
+ 132   1      
+ 133   1      if(C3 == 0)
+ 134   1      {
+ 135   2      LCD_DATA('=');
+ 136   2      delay(5);
+ 137   2      while(C3 == 0); 
+ 138   2      }
+ 139   1      
+ 140   1      if(C4 == 0)
+ 141   1      {
+ 142   2      LCD_DATA('+');
+ 143   2      delay(5);
+ 144   2      while(C4 == 0); 
+ 145   2      }
+ 146   1      
+ 147   1      return 0;
+ 148   1      }
+ 149          
+ 150          
+ 151          void main()
+ 152          {
+ 153   1      P2 = 0x00;  // Declaring P2 Output Pins
+ 154   1      P3 = 0x00;  // Declaring P3 Output Pins
+ 155   1       
+ 156   1      P1 = 0x0F;  //  Keypad
+ 157   1      LCD_INIT(); // Initialising LCD for operation 
+ 158   1      LCD_MESSAGE("Embedded Systems"); //Sending Data to the LCD
+ 159   1      LCD_COMMAND(0xC0);
+ 160   1      delay(100);
+ 161   1      while(!KEYPAD());   // Halting controller at this line infinitly
+ 162   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    425    ----
+   CONSTANT SIZE    =     17    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
