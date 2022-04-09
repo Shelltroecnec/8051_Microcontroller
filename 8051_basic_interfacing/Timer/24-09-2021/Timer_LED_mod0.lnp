@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"Timer_LED_mod0_code.obj" 
+TO "Timer_LED_mod0" 
+RAMSIZE(256) 
