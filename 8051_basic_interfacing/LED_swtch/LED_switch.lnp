@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"LED_switch.obj" 
+TO "LED_switch" 
+RAMSIZE(256) 
