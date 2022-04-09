@@ -1,0 +1,214 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/20/2022  13:39:32  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, Print_on_both_lines.obj TO Print_on_both_lines RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  Print_on_both_lines.obj (PRINT_ON_BOTH_LINES)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?IMUL)
+
+
+LINK MAP OF MODULE:  Print_on_both_lines (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         _DATA_GROUP_
+            IDATA   000BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     002BH     UNIT         ?C?LIB_CODE
+            CODE    082BH     0029H     UNIT         ?PR?_MSG?PRINT_ON_BOTH_LINES
+            CODE    0854H     0027H     UNIT         ?PR?_DELAY?PRINT_ON_BOTH_LINES
+            CODE    087BH     0023H     UNIT         ?PR?INIT_LCD?PRINT_ON_BOTH_LINES
+            CODE    089EH     0023H     UNIT         ?PR?MAIN?PRINT_ON_BOTH_LINES
+            CODE    08C1H     0021H     UNIT         ?CO?PRINT_ON_BOTH_LINES
+            CODE    08E2H     000CH     UNIT         ?C_C51STARTUP
+            CODE    08EEH     000AH     UNIT         ?PR?_CMD?PRINT_ON_BOTH_LINES
+            CODE    08F8H     000AH     UNIT         ?PR?_LCD_DATA?PRINT_ON_BOTH_LINES
+
+
+
+OVERLAY MAP OF MODULE:   Print_on_both_lines (?C_STARTUP)
+
+
+SEGMENT                                     DATA_GROUP 
+  +--> CALLED SEGMENT                     START    LENGTH
+---------------------------------------------------------
+?C_C51STARTUP                             -----    -----
+  +--> ?PR?MAIN?PRINT_ON_BOTH_LINES
+
+?PR?MAIN?PRINT_ON_BOTH_LINES              -----    -----
+  +--> ?PR?INIT_LCD?PRINT_ON_BOTH_LINES
+  +--> ?CO?PRINT_ON_BOTH_LINES
+  +--> ?PR?_MSG?PRINT_ON_BOTH_LINES
+  +--> ?PR?_CMD?PRINT_ON_BOTH_LINES
+
+?PR?INIT_LCD?PRINT_ON_BOTH_LINES          -----    -----
+  +--> ?PR?_CMD?PRINT_ON_BOTH_LINES
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/20/2022  13:39:32  PAGE 2
+
+
+?PR?_CMD?PRINT_ON_BOTH_LINES              -----    -----
+  +--> ?PR?_DELAY?PRINT_ON_BOTH_LINES
+
+?PR?_MSG?PRINT_ON_BOTH_LINES              0008H    0003H
+  +--> ?PR?_LCD_DATA?PRINT_ON_BOTH_LINES
+
+?PR?_LCD_DATA?PRINT_ON_BOTH_LINES         -----    -----
+  +--> ?PR?_DELAY?PRINT_ON_BOTH_LINES
+
+
+
+SYMBOL TABLE OF MODULE:  Print_on_both_lines (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:08E2H         SEGMENT       ?C_C51STARTUP
+  I:000BH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:08E5H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:08E2H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:08E2H         LINE#         133
+  C:08E4H         LINE#         134
+  C:08E5H         LINE#         135
+  C:08E6H         LINE#         136
+  C:08E8H         LINE#         185
+  C:08EBH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        PRINT_ON_BOTH_LINES
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:085CH         PUBLIC        _delay
+  B:00B0H.2       PUBLIC        EN
+  B:00B0H.0       PUBLIC        RS
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/20/2022  13:39:32  PAGE 3
+
+
+  C:089EH         PUBLIC        main
+  B:00B0H.1       PUBLIC        RW
+  C:08F8H         PUBLIC        _lcd_data
+  C:08EEH         PUBLIC        _cmd
+  C:082BH         PUBLIC        _msg
+  C:087BH         PUBLIC        init_lcd
+  -------         PROC          INIT_LCD
+  C:087BH         LINE#         12
+  C:087BH         LINE#         13
+  C:087BH         LINE#         14
+  C:0882H         LINE#         15
+  C:0889H         LINE#         16
+  C:0890H         LINE#         17
+  C:0897H         LINE#         18
+  -------         ENDPROC       INIT_LCD
+  -------         PROC          _CMD
+  D:0006H         SYMBOL        c
+  C:08EEH         LINE#         20
+  C:08EEH         LINE#         21
+  C:08EEH         LINE#         22
+  C:08F0H         LINE#         23
+  C:08F2H         LINE#         24
+  C:08F2H         LINE#         25
+  C:08F2H         LINE#         26
+  C:08F5H         LINE#         27
+  C:08F7H         LINE#         28
+  -------         ENDPROC       _CMD
+  -------         PROC          _LCD_DATA
+  D:0006H         SYMBOL        d
+  C:08F8H         LINE#         29
+  C:08F8H         LINE#         30
+  C:08F8H         LINE#         31
+  C:08FAH         LINE#         32
+  C:08FCH         LINE#         33
+  C:08FCH         LINE#         34
+  C:08FCH         LINE#         35
+  C:08FFH         LINE#         36
+  C:0901H         LINE#         37
+  -------         ENDPROC       _LCD_DATA
+  -------         PROC          _MSG
+  D:0008H         SYMBOL        p
+  C:082BH         LINE#         38
+  C:0831H         LINE#         39
+  C:0831H         LINE#         40
+  C:083CH         LINE#         41
+  C:083CH         LINE#         42
+  C:0851H         LINE#         43
+  -------         ENDPROC       _MSG
+  -------         PROC          L?0015
+  -------         ENDPROC       L?0015
+  -------         PROC          _DELAY
+  D:0002H         SYMBOL        t
+  -------         DO            
+  D:0082H         SYMBOL        a
+  -------         ENDDO         
+  C:085CH         LINE#         44
+  C:0860H         LINE#         45
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/20/2022  13:39:32  PAGE 4
+
+
+  C:0860H         LINE#         47
+  C:087AH         LINE#         48
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  C:089EH         LINE#         49
+  C:089EH         LINE#         50
+  C:089EH         LINE#         51
+  C:08A1H         LINE#         52
+  C:08A3H         LINE#         53
+  C:08A6H         LINE#         54
+  C:08AFH         LINE#         55
+  C:08B6H         LINE#         56
+  C:08BFH         LINE#         57
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        PRINT_ON_BOTH_LINES
+
+  -------         MODULE        ?C?CLDPTR
+  C:0800H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?IMUL
+  C:0819H         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00DAH BYTE (10%) *
+******************************************************************************
+
+Program Size: data=12.0 xdata=0 code=261
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

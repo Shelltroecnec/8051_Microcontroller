@@ -1,0 +1,83 @@
+C51 COMPILER V9.50a   PRINT_ON_BOTH_LINES                                                  03/20/2022 13:39:32 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE PRINT_ON_BOTH_LINES
+OBJECT MODULE PLACED IN Print_on_both_lines.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Print_on_both_lines.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #define DATA P2 
+   3          sbit RS=P3^0;
+   4          sbit RW=P3^1;
+   5          sbit EN=P3^2;
+   6          void delay(unsigned int t);
+   7          void cmd(unsigned int c);
+   8          void lcd_data(unsigned int d);
+   9          void init_lcd();
+  10          void msg(char *p);
+  11          
+  12          void init_lcd()
+  13          {
+  14   1      cmd(0x38); //Using in 8bit 5x7 dot matrix
+  15   1      cmd(0x01); //Clear the Screen
+  16   1      cmd(0x06); //Move the Cursor to the left
+  17   1      cmd(0x0C); //Cursor off LCD on
+  18   1      cmd(0x80); //Take Cursor to the Begining
+  19   1      }
+  20          void cmd(unsigned int c)
+  21          {
+  22   1      DATA=c;
+  23   1      RS=0; //Command Mode
+  24   1      RW=0; //Write Mode
+  25   1      EN=1; //Enable =1
+  26   1      delay(1);
+  27   1      EN=0; //Enable =0
+  28   1      }
+  29          void lcd_data(unsigned int d)
+  30          {
+  31   1      DATA=d;
+  32   1      RS=1; //Data Mode
+  33   1      RW=0; //Write Mode
+  34   1      EN=1; //Enable=1
+  35   1      delay(1);
+  36   1      EN=0; //Enable=0
+  37   1      }
+  38          void msg(char *p)
+  39          {
+  40   1      while(*p != '\0')
+  41   1      {
+  42   2      lcd_data(*p++);
+  43   2      }}
+  44          void delay(unsigned int t)
+  45          {
+  46   1      unsigned int a;
+  47   1      for(a=0;a<=1275*t;a++);
+  48   1      }
+  49          int main()
+  50          {
+  51   1        P2=0X00;
+  52   1        P3=0X00;
+  53   1        init_lcd();
+  54   1        msg("Embedded Solution");
+  55   1        cmd(0xC0);
+C51 COMPILER V9.50a   PRINT_ON_BOTH_LINES                                                  03/20/2022 13:39:32 PAGE 2   
+
+  56   1        msg("Shahid Hashmhi");
+  57   1        while(1);
+  58   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    170    ----
+   CONSTANT SIZE    =     33    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

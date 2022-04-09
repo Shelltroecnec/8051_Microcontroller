@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"Print_on_both_lines.obj" 
+TO "Print_on_both_lines" 
+RAMSIZE(256) 

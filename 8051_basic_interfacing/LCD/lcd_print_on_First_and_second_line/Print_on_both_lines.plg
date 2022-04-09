@@ -1,0 +1,175 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\_techsolution_MicroControllers\8051\Keil_pracs\22-09-2021\LCD\lcd_print_on_First_and_second_line\Print_on_both_lines.uvproj
+Project File Date:  03/20/2022
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling Print_on_both_lines.c...
+Print_on_both_lines.c(6): error C141: syntax error near 'int', expected ')'
+Print_on_both_lines.c(10): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling Print_on_both_lines.c...
+Print_on_both_lines.c(22): error C213: left side of asn-op not an lvalue
+Print_on_both_lines.c(43): error C141: syntax error near 'p'
+Target not created
+Build target 'Target 1'
+compiling Print_on_both_lines.c...
+Print_on_both_lines.c(23): error C213: left side of asn-op not an lvalue
+Print_on_both_lines.c(43): error C141: syntax error near 'p'
+Target not created
+Build target 'Target 1'
+compiling Print_on_both_lines.c...
+Print_on_both_lines.c(3): error C141: syntax error near '3.0', expected '='
+Print_on_both_lines.c(4): error C141: syntax error near 'sbit', expected ';'
+Print_on_both_lines.c(5): error C141: syntax error near 'sbit', expected ';'
+Print_on_both_lines.c(6): error C141: syntax error near 'void', expected ';'
+Print_on_both_lines.c(23): error C202: 'rs': undefined identifier
+Print_on_both_lines.c(24): error C202: 'rw': undefined identifier
+Print_on_both_lines.c(25): error C202: 'en': undefined identifier
+Print_on_both_lines.c(27): error C202: 'en': undefined identifier
+Print_on_both_lines.c(32): error C202: 'rs': undefined identifier
+Print_on_both_lines.c(33): error C202: 'rw': undefined identifier
+Print_on_both_lines.c(34): error C202: 'en': undefined identifier
+Print_on_both_lines.c(36): error C202: 'en': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Print_on_both_lines.c...
+Print_on_both_lines.c(4): error C143: invalid absolute bit address
+Print_on_both_lines.c(4): error C141: syntax error near 'sbit', expected ';'
+Print_on_both_lines.c(5): error C143: invalid absolute bit address
+Print_on_both_lines.c(5): error C141: syntax error near 'sbit', expected ';'
+Print_on_both_lines.c(6): error C143: invalid absolute bit address
+Print_on_both_lines.c(6): error C141: syntax error near 'void', expected ';'
+Print_on_both_lines.c(23): error C202: 'rs': undefined identifier
+Print_on_both_lines.c(24): error C202: 'rw': undefined identifier
+Print_on_both_lines.c(25): error C202: 'en': undefined identifier
+Print_on_both_lines.c(27): error C202: 'en': undefined identifier
+Print_on_both_lines.c(32): error C202: 'rs': undefined identifier
+Print_on_both_lines.c(33): error C202: 'rw': undefined identifier
+Print_on_both_lines.c(34): error C202: 'en': undefined identifier
+Print_on_both_lines.c(36): error C202: 'en': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Print_on_both_lines.c...
+Print_on_both_lines.c(4): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(4): error C141: syntax error near 'sbit', expected ';'
+Print_on_both_lines.c(5): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(5): error C141: syntax error near 'sbit', expected ';'
+Print_on_both_lines.c(6): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(6): error C141: syntax error near 'void', expected ';'
+Print_on_both_lines.c(23): error C202: 'rs': undefined identifier
+Print_on_both_lines.c(24): error C202: 'rw': undefined identifier
+Print_on_both_lines.c(25): error C202: 'en': undefined identifier
+Print_on_both_lines.c(27): error C202: 'en': undefined identifier
+Print_on_both_lines.c(32): error C202: 'rs': undefined identifier
+Print_on_both_lines.c(33): error C202: 'rw': undefined identifier
+Print_on_both_lines.c(34): error C202: 'en': undefined identifier
+Print_on_both_lines.c(36): error C202: 'en': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Print_on_both_lines.c...
+Print_on_both_lines.c(3): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(4): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(5): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(23): error C202: 'rs': undefined identifier
+Print_on_both_lines.c(24): error C202: 'rw': undefined identifier
+Print_on_both_lines.c(25): error C202: 'en': undefined identifier
+Print_on_both_lines.c(27): error C202: 'en': undefined identifier
+Print_on_both_lines.c(32): error C202: 'rs': undefined identifier
+Print_on_both_lines.c(33): error C202: 'rw': undefined identifier
+Print_on_both_lines.c(34): error C202: 'en': undefined identifier
+Print_on_both_lines.c(36): error C202: 'en': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Print_on_both_lines.c...
+Print_on_both_lines.c(3): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(4): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(5): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(23): error C202: 'RS': undefined identifier
+Print_on_both_lines.c(24): error C202: 'RW': undefined identifier
+Print_on_both_lines.c(25): error C202: 'EN': undefined identifier
+Print_on_both_lines.c(27): error C202: 'EN': undefined identifier
+Print_on_both_lines.c(32): error C202: 'RS': undefined identifier
+Print_on_both_lines.c(33): error C202: 'RW': undefined identifier
+Print_on_both_lines.c(34): error C202: 'EN': undefined identifier
+Print_on_both_lines.c(36): error C202: 'EN': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Print_on_both_lines.c...
+Print_on_both_lines.c(3): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(4): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(5): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(23): error C202: 'RS': undefined identifier
+Print_on_both_lines.c(24): error C202: 'RW': undefined identifier
+Print_on_both_lines.c(25): error C202: 'EN': undefined identifier
+Print_on_both_lines.c(27): error C202: 'EN': undefined identifier
+Print_on_both_lines.c(32): error C202: 'RS': undefined identifier
+Print_on_both_lines.c(33): error C202: 'RW': undefined identifier
+Print_on_both_lines.c(34): error C202: 'EN': undefined identifier
+Print_on_both_lines.c(36): error C202: 'EN': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Print_on_both_lines.c...
+Print_on_both_lines.c(3): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(4): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(5): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(23): error C202: 'RS': undefined identifier
+Print_on_both_lines.c(24): error C202: 'RW': undefined identifier
+Print_on_both_lines.c(25): error C202: 'EN': undefined identifier
+Print_on_both_lines.c(27): error C202: 'EN': undefined identifier
+Print_on_both_lines.c(32): error C202: 'RS': undefined identifier
+Print_on_both_lines.c(33): error C202: 'RW': undefined identifier
+Print_on_both_lines.c(34): error C202: 'EN': undefined identifier
+Print_on_both_lines.c(36): error C202: 'EN': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Print_on_both_lines.c...
+Print_on_both_lines.c(3): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(4): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(5): error C142: 'SFR': invalid base address
+Print_on_both_lines.c(23): error C202: 'RS': undefined identifier
+Print_on_both_lines.c(24): error C202: 'RW': undefined identifier
+Print_on_both_lines.c(25): error C202: 'EN': undefined identifier
+Print_on_both_lines.c(27): error C202: 'EN': undefined identifier
+Print_on_both_lines.c(32): error C202: 'RS': undefined identifier
+Print_on_both_lines.c(33): error C202: 'RW': undefined identifier
+Print_on_both_lines.c(34): error C202: 'EN': undefined identifier
+Print_on_both_lines.c(36): error C202: 'EN': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Print_on_both_lines.c...
+Print_on_both_lines.c(43): error C193: '*': illegal type conversion from/to 'void'
+Target not created
+Build target 'Target 1'
+compiling Print_on_both_lines.c...
+Print_on_both_lines.c(43): error C141: syntax error near 'p'
+Target not created
+Build target 'Target 1'
+compiling Print_on_both_lines.c...
+Print_on_both_lines.c(43): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling Print_on_both_lines.c...
+linking...
+Program Size: data=12.0 xdata=0 code=261
+creating hex file from "Print_on_both_lines"...
+"Print_on_both_lines" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling Print_on_both_lines.c...
+linking...
+Program Size: data=12.0 xdata=0 code=261
+creating hex file from "Print_on_both_lines"...
+"Print_on_both_lines" - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+assembling STARTUP.A51...
+compiling Print_on_both_lines.c...
+linking...
+Program Size: data=12.0 xdata=0 code=261
+creating hex file from "Print_on_both_lines"...
+"Print_on_both_lines" - 0 Error(s), 0 Warning(s).
