@@ -1,5 +1,5 @@
 # 8051_Microcontroller
-##########################################################################################################################
+##########################################################################################
 **Software Used** : 
 Keil 4 Micro-Vision from ARM (For Coding in Embedded C)
 Proteus 8 Professional (For Circuit Disigning & Simulation)
