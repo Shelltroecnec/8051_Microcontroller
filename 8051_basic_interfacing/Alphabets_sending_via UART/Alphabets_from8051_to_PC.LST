@@ -1,0 +1,62 @@
+C51 COMPILER V9.50a   ALPHABETS_FROM8051_TO_PC                                             03/24/2022 18:13:02 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE ALPHABETS_FROM8051_TO_PC
+OBJECT MODULE PLACED IN Alphabets_from8051_to_PC.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Alphabets_from8051_to_PC.C BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          void SERIAL_INIT(void);
+   3          void SERIAL_TRANSMIT(unsigned char a);
+   4          void delay (int t);
+   5          unsigned char ch[] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U',
+             -'V','W','X','Y','Z'};
+   6          int i;
+   7          void main()
+   8          {
+   9   1        
+  10   1        while (1)
+  11   1        {
+  12   2      SERIAL_INIT();
+  13   2      SERIAL_TRANSMIT(ch[i]);
+  14   2      delay(2);
+  15   2      i++;
+  16   2      }
+  17   1      }
+  18          
+  19          void SERIAL_INIT(void)
+  20          {
+  21   1      TMOD = 0x20; // Timer 1 mode 2
+  22   1      SCON = 0x50; // mode 1 and ren is enable
+  23   1      TH1  = 0xFD; // for 9600 baud rate
+  24   1      TR1  = 1;    // turn on the timer
+  25   1      }
+  26          
+  27          void SERIAL_TRANSMIT(unsigned char a)
+  28          {
+  29   1      SBUF = ch[i];
+  30   1      while(TI == 0);
+  31   1      TI = 0;
+  32   1      }
+*** WARNING C280 IN LINE 27 OF Alphabets_from8051_to_PC.C: 'a': unreferenced local variable
+  33          void delay (int t)
+  34          {
+  35   1        int i;
+  36   1        for(i=0;i<1275*t;i++);
+  37   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     95    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     28       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

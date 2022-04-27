@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"Alphabets_from8051_to_PC.obj" 
+TO "Alphabets_from8051_to_PC" 
+RAMSIZE(256) 

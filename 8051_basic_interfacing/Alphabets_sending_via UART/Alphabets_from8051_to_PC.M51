@@ -1,0 +1,171 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/24/2022  18:13:03  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, Alphabets_from8051_to_PC.obj TO Alphabets_from8051_to_PC RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  Alphabets_from8051_to_PC.obj (ALPHABETS_FROM8051_TO_PC)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?IMUL)
+
+
+LINK MAP OF MODULE:  Alphabets_from8051_to_PC (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     001CH     UNIT         ?DT?ALPHABETS_FROM8051_TO_PC
+            DATA    0024H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0025H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0025H     UNIT         ?PR?_DELAY?ALPHABETS_FROM8051_TO_PC
+            CODE    08B1H     001EH     UNIT         ?PR?MAIN?ALPHABETS_FROM8051_TO_PC
+            CODE    08CFH     001DH     UNIT         ?C_INITSEG
+            CODE    08ECH     0012H     UNIT         ?C?LIB_CODE
+            CODE    08FEH     0010H     UNIT         ?PR?_SERIAL_TRANSMIT?ALPHABETS_FROM8051_TO_PC
+            CODE    090EH     000CH     UNIT         ?PR?SERIAL_INIT?ALPHABETS_FROM8051_TO_PC
+
+
+
+OVERLAY MAP OF MODULE:   Alphabets_from8051_to_PC (?C_STARTUP)
+
+
+SEGMENT                                            DATA_GROUP 
+  +--> CALLED SEGMENT                            START    LENGTH
+----------------------------------------------------------------
+?C_C51STARTUP                                    -----    -----
+  +--> ?PR?MAIN?ALPHABETS_FROM8051_TO_PC
+  +--> ?C_INITSEG
+
+?PR?MAIN?ALPHABETS_FROM8051_TO_PC                -----    -----
+  +--> ?PR?SERIAL_INIT?ALPHABETS_FROM8051_TO_PC
+  +--> ?PR?_SERIAL_TRANSMIT?ALPHABETS_FROM80...
+  +--> ?PR?_DELAY?ALPHABETS_FROM8051_TO_PC
+
+?PR?_SERIAL_TRANSMIT?ALPHABETS_FROM80...         0024H    0001H
+
+
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/24/2022  18:13:03  PAGE 2
+
+
+SYMBOL TABLE OF MODULE:  Alphabets_from8051_to_PC (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0800H         SEGMENT       ?C_C51STARTUP
+  I:0025H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0803H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0800H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0800H         LINE#         133
+  C:0802H         LINE#         134
+  C:0803H         LINE#         135
+  C:0804H         LINE#         136
+  C:0806H         LINE#         185
+  C:0809H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        ALPHABETS_FROM8051_TO_PC
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:088CH         PUBLIC        _delay
+  C:08FEH         PUBLIC        _SERIAL_TRANSMIT
+  B:0098H.1       PUBLIC        TI
+  C:08B1H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0008H         PUBLIC        ch
+  D:008DH         PUBLIC        TH1
+  B:0088H.6       PUBLIC        TR1
+  C:090EH         PUBLIC        SERIAL_INIT
+  D:0022H         PUBLIC        i
+  -------         PROC          MAIN
+  C:08B1H         LINE#         7
+  C:08B1H         LINE#         8
+  C:08B1H         LINE#         10
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/24/2022  18:13:03  PAGE 3
+
+
+  C:08B1H         LINE#         11
+  C:08B1H         LINE#         12
+  C:08B4H         LINE#         13
+  C:08BEH         LINE#         14
+  C:08C5H         LINE#         15
+  C:08CDH         LINE#         16
+  -------         ENDPROC       MAIN
+  -------         PROC          SERIAL_INIT
+  C:090EH         LINE#         19
+  C:090EH         LINE#         20
+  C:090EH         LINE#         21
+  C:0911H         LINE#         22
+  C:0914H         LINE#         23
+  C:0917H         LINE#         24
+  C:0919H         LINE#         25
+  -------         ENDPROC       SERIAL_INIT
+  -------         PROC          _SERIAL_TRANSMIT
+  D:0024H         SYMBOL        a
+  C:08FEH         LINE#         27
+  C:0900H         LINE#         28
+  C:0900H         LINE#         29
+  C:0908H         LINE#         30
+  C:090BH         LINE#         31
+  C:090DH         LINE#         32
+  -------         ENDPROC       _SERIAL_TRANSMIT
+  -------         PROC          _DELAY
+  D:0002H         SYMBOL        t
+  -------         DO            
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:088CH         LINE#         33
+  C:0890H         LINE#         34
+  C:0890H         LINE#         36
+  C:08B0H         LINE#         37
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        ALPHABETS_FROM8051_TO_PC
+
+  -------         MODULE        ?C?IMUL
+  C:08ECH         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 008AH BYTE ( 6%) *
+******************************************************************************
+
+Program Size: data=38.0 xdata=0 code=285
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
