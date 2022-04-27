@@ -1,0 +1,46 @@
+C51 COMPILER V9.50a   MODEM_LED_OPERATION                                                  04/01/2022 18:52:44 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE MODEM_LED_OPERATION
+OBJECT MODULE PLACED IN modem_led_operation.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE modem_led_operation.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          //WAP for LED Operations using Modem communication i.e.RF comm.
+   2          
+   3          #include<reg51.h>
+   4          #include"uart_header.h"
+   5          sbit led = P1^0;
+   6          sbit swt = P3^2;
+   7          
+   8          void main()
+   9          {
+  10   1      serial_init();
+  11   1      while(1)
+  12   1      {
+  13   2        if(swt==0)
+  14   2      {
+  15   3      led = 0;
+  16   3        tx('1');
+  17   3      }
+  18   2      if(swt==1)
+  19   2      {
+  20   3      led = 1;
+  21   3        tx('2');
+  22   3      }
+  23   2      }}
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    150    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

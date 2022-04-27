@@ -1,0 +1,233 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/01/2022  18:52:44  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, modem_led_operation.obj TO Modem_rx_tx RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  modem_led_operation.obj (MODEM_LED_OPERATION)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?IMUL)
+
+
+LINK MAP OF MODULE:  Modem_rx_tx (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         ?DT?_DISPLAY?MODEM_LED_OPERATION
+            DATA    000BH     0003H     UNIT         ?DT?MODEM_LED_OPERATION
+            IDATA   000EH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     002DH     UNIT         ?PR?_DISPLAY?MODEM_LED_OPERATION
+            CODE    082DH     002BH     UNIT         ?C?LIB_CODE
+            CODE    0858H     0025H     UNIT         ?PR?_DELAY?MODEM_LED_OPERATION
+            CODE    087DH     0019H     UNIT         ?PR?MAIN?MODEM_LED_OPERATION
+            CODE    0896H     000EH     UNIT         ?PR?SERIAL_INIT?MODEM_LED_OPERATION
+            CODE    08A4H     000CH     UNIT         ?C_C51STARTUP
+            CODE    08B0H     000BH     UNIT         ?PR?RX?MODEM_LED_OPERATION
+            CODE    08BBH     000AH     UNIT         ?PR?NEW_LINE?MODEM_LED_OPERATION
+            CODE    08C5H     0008H     UNIT         ?PR?_TX?MODEM_LED_OPERATION
+
+
+
+OVERLAY MAP OF MODULE:   Modem_rx_tx (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MODEM_LED_OPERATION
+
+?PR?MAIN?MODEM_LED_OPERATION
+  +--> ?PR?SERIAL_INIT?MODEM_LED_OPERATION
+  +--> ?PR?_TX?MODEM_LED_OPERATION
+
+
+
+SYMBOL TABLE OF MODULE:  Modem_rx_tx (?C_STARTUP)
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/01/2022  18:52:44  PAGE 2
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:08A4H         SEGMENT       ?C_C51STARTUP
+  I:000EH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:08A7H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:08A4H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:08A4H         LINE#         133
+  C:08A6H         LINE#         134
+  C:08A7H         LINE#         135
+  C:08A8H         LINE#         136
+  C:08AAH         LINE#         185
+  C:08ADH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        MODEM_LED_OPERATION
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:0858H         PUBLIC        _delay
+  C:0896H         PUBLIC        serial_init
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:087DH         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  B:0090H.0       PUBLIC        led
+  D:008DH         PUBLIC        TH1
+  C:08BBH         PUBLIC        new_line
+  D:000BH         PUBLIC        re
+  B:0088H.6       PUBLIC        TR1
+  B:00B0H.2       PUBLIC        swt
+  B:0098H.4       PUBLIC        REN
+  D:000CH         PUBLIC        i
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/01/2022  18:52:44  PAGE 3
+
+
+  C:08B0H         PUBLIC        rx
+  C:08C5H         PUBLIC        _tx
+  C:0800H         PUBLIC        _display
+  -------         PROC          _TX
+  D:0007H         SYMBOL        b
+  C:08C5H         LINE#         9
+  C:08C5H         LINE#         10
+  C:08C5H         LINE#         11
+  C:08C7H         LINE#         12
+  C:08CAH         LINE#         13
+  C:08CCH         LINE#         14
+  -------         ENDPROC       _TX
+  -------         PROC          RX
+  C:08B0H         LINE#         15
+  C:08B0H         LINE#         16
+  C:08B0H         LINE#         17
+  C:08B3H         LINE#         18
+  C:08B5H         LINE#         19
+  C:08B8H         LINE#         20
+  C:08BAH         LINE#         21
+  -------         ENDPROC       RX
+  -------         PROC          _DELAY
+  D:0002H         SYMBOL        t
+  -------         DO            
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:0858H         LINE#         22
+  C:085CH         LINE#         23
+  C:085CH         LINE#         25
+  C:087CH         LINE#         26
+  -------         ENDPROC       _DELAY
+  -------         PROC          SERIAL_INIT
+  C:0896H         LINE#         27
+  C:0896H         LINE#         28
+  C:0896H         LINE#         29
+  C:0899H         LINE#         30
+  C:089BH         LINE#         31
+  C:089EH         LINE#         32
+  C:08A1H         LINE#         33
+  C:08A3H         LINE#         34
+  -------         ENDPROC       SERIAL_INIT
+  -------         PROC          _DISPLAY
+  D:0008H         SYMBOL        p
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0800H         LINE#         35
+  C:0806H         LINE#         36
+  C:0806H         LINE#         38
+  C:0814H         LINE#         39
+  C:0814H         LINE#         40
+  C:0825H         LINE#         41
+  C:082CH         LINE#         42
+  -------         ENDPROC       _DISPLAY
+  -------         PROC          NEW_LINE
+  C:08BBH         LINE#         43
+  C:08BBH         LINE#         44
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/01/2022  18:52:44  PAGE 4
+
+
+  C:08BBH         LINE#         45
+  C:08C0H         LINE#         46
+  -------         ENDPROC       NEW_LINE
+  -------         PROC          MAIN
+  C:087DH         LINE#         8
+  C:087DH         LINE#         9
+  C:087DH         LINE#         10
+  C:0880H         LINE#         11
+  C:0880H         LINE#         12
+  C:0880H         LINE#         13
+  C:0883H         LINE#         14
+  C:0883H         LINE#         15
+  C:0885H         LINE#         16
+  C:088AH         LINE#         17
+  C:088AH         LINE#         18
+  C:088DH         LINE#         19
+  C:088DH         LINE#         20
+  C:088FH         LINE#         21
+  C:0894H         LINE#         22
+  C:0894H         LINE#         23
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MODEM_LED_OPERATION
+
+  -------         MODULE        ?C?CLDPTR
+  C:082DH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?IMUL
+  C:0846H         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RX?MODEM_LED_OPERATION
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?MODEM_LED_OPERATION
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DISPLAY?MODEM_LED_OPERATION
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?NEW_LINE?MODEM_LED_OPERATION
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00A5H BYTE ( 8%) *
+******************************************************************************
+
+Program Size: data=15.0 xdata=0 code=208
+LINK/LOCATE RUN COMPLETE.  4 WARNING(S),  0 ERROR(S)
