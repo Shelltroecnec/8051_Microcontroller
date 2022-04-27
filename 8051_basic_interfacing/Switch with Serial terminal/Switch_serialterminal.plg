@@ -1,0 +1,154 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\_techsolution_MicroControllers\8051\Serial Communication\06-10-2021\Switch with Serial terminal\Switch_serialterminal.uvproj
+Project File Date:  10/06/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(12): warning C182: pointer to different objects
+Switch_serialterminal.c(14): error C141: syntax error near 'unsigned'
+Switch_serialterminal.c(14): error C202: 'a': undefined identifier
+Switch_serialterminal.c(14): error C101: ''h': invalid character constant
+Switch_serialterminal.c(14): error C141: syntax error near 'i'
+Switch_serialterminal.c(14): error C101: ''': invalid character constant
+Switch_serialterminal.c(15): error C141: syntax error near 'unsigned'
+Switch_serialterminal.c(15): error C101: ''t': invalid character constant
+Switch_serialterminal.c(15): error C141: syntax error near 'here'
+Switch_serialterminal.c(15): error C101: ''ere': invalid character constant
+Switch_serialterminal.c(17): error C141: syntax error near 'if'
+Target not created
+Build target 'Target 1'
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(12): warning C182: pointer to different objects
+Switch_serialterminal.c(14): error C141: syntax error near 'unsigned'
+Switch_serialterminal.c(14): error C202: 'a': undefined identifier
+Switch_serialterminal.c(14): error C101: ''h': invalid character constant
+Switch_serialterminal.c(14): error C141: syntax error near 'i'
+Switch_serialterminal.c(14): error C101: '';': invalid character constant
+Switch_serialterminal.c(15): error C141: syntax error near 'unsigned'
+Switch_serialterminal.c(15): error C101: ''t': invalid character constant
+Switch_serialterminal.c(15): error C141: syntax error near 'here'
+Switch_serialterminal.c(15): error C101: '';': invalid character constant
+Switch_serialterminal.c(17): error C141: syntax error near 'if'
+Target not created
+Build target 'Target 1'
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(12): warning C182: pointer to different objects
+Switch_serialterminal.c(14): error C141: syntax error near 'unsigned'
+Switch_serialterminal.c(14): error C101: ''h': invalid character constant
+Switch_serialterminal.c(14): error C141: syntax error near 'i'
+Switch_serialterminal.c(14): error C101: '';': invalid character constant
+Switch_serialterminal.c(14): error C202: 'i': undefined identifier
+Switch_serialterminal.c(15): error C141: syntax error near 'unsigned'
+Switch_serialterminal.c(15): error C101: ''t': invalid character constant
+Switch_serialterminal.c(15): error C141: syntax error near 'here'
+Switch_serialterminal.c(15): error C101: '';': invalid character constant
+Switch_serialterminal.c(17): error C141: syntax error near 'if'
+Target not created
+Build target 'Target 1'
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(12): warning C182: pointer to different objects
+Switch_serialterminal.c(14): error C141: syntax error near 'unsigned'
+Switch_serialterminal.c(15): error C141: syntax error near 'unsigned'
+Target not created
+Build target 'Target 1'
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(12): warning C182: pointer to different objects
+Switch_serialterminal.c(14): error C141: syntax error near 'unsigned'
+Switch_serialterminal.c(15): error C141: syntax error near 'unsigned'
+Target not created
+Rebuild target 'Target 1'
+assembling STARTUP.A51...
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(12): warning C182: pointer to different objects
+Switch_serialterminal.c(14): error C141: syntax error near 'char'
+Switch_serialterminal.c(15): error C141: syntax error near 'unsigned'
+Target not created
+Rebuild target 'Target 1'
+assembling STARTUP.A51...
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(6): error C247: non-address/-constant initializer
+Target not created
+Build target 'Target 1'
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(6): error C101: ''h': invalid character constant
+Switch_serialterminal.c(6): error C141: syntax error near 'i'
+Switch_serialterminal.c(6): error C101: '';': invalid character constant
+Switch_serialterminal.c(7): error C101: ''t': invalid character constant
+Switch_serialterminal.c(7): error C141: syntax error near 'here'
+Switch_serialterminal.c(7): error C101: '';': invalid character constant
+Switch_serialterminal.c(10): error C141: syntax error near '{'
+Switch_serialterminal.c(11): error C231: 'SERIAL_INIT': redefinition
+Switch_serialterminal.c(12): error C141: syntax error near '<string>'
+Switch_serialterminal.c(12): error C231: '_display': redefinition
+Switch_serialterminal.c(13): error C141: syntax error near '0x0d'
+Switch_serialterminal.c(13): error C231: '_display': redefinition
+Switch_serialterminal.c(15): error C141: syntax error near 'if'
+Switch_serialterminal.c(15): error C141: syntax error near '==', expected ')'
+Switch_serialterminal.c(17): error C231: '_SERIAL_TRANSMIT': redefinition
+Switch_serialterminal.c(18): error C231: 'SBUF': redefinition
+Switch_serialterminal.c(18): error C247: non-address/-constant initializer
+Switch_serialterminal.c(18): error C231: 'SBUF': redefinition
+Switch_serialterminal.c(19): error C141: syntax error near '}'
+Switch_serialterminal.c(22): error C231: '_SERIAL_TRANSMIT': redefinition
+Switch_serialterminal.c(23): error C279: 'SBUF': multiple initialization
+Switch_serialterminal.c(23): error C231: 'SBUF': redefinition
+Switch_serialterminal.c(23): error C247: non-address/-constant initializer
+Switch_serialterminal.c(23): error C231: 'SBUF': redefinition
+Switch_serialterminal.c(24): error C141: syntax error near '}'
+Target not created
+Rebuild target 'Target 1'
+assembling STARTUP.A51...
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(6): error C247: non-address/-constant initializer
+Target not created
+Build target 'Target 1'
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(6): error C247: non-address/-constant initializer
+Target not created
+Build target 'Target 1'
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(12): warning C182: pointer to different objects
+Switch_serialterminal.c(18): warning C209: '_SERIAL_TRANSMIT': too few actual parameters
+Switch_serialterminal.c(23): warning C209: '_SERIAL_TRANSMIT': too few actual parameters
+linking...
+Program Size: data=25.0 xdata=0 code=538
+creating hex file from "Switch_serialterminal"...
+"Switch_serialterminal" - 0 Error(s), 3 Warning(s).
+Rebuild target 'Target 1'
+assembling STARTUP.A51...
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(12): warning C182: pointer to different objects
+Switch_serialterminal.c(18): warning C209: '_SERIAL_TRANSMIT': too few actual parameters
+Switch_serialterminal.c(23): warning C209: '_SERIAL_TRANSMIT': too few actual parameters
+linking...
+Program Size: data=25.0 xdata=0 code=538
+creating hex file from "Switch_serialterminal"...
+"Switch_serialterminal" - 0 Error(s), 3 Warning(s).
+Rebuild target 'Target 1'
+assembling STARTUP.A51...
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(12): warning C182: pointer to different objects
+Switch_serialterminal.c(30): error C267: 'SERIAL_TRANSMIT': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(12): warning C182: pointer to different objects
+Switch_serialterminal.c(17): error C141: syntax error near ']'
+Switch_serialterminal.c(22): error C141: syntax error near ']'
+Switch_serialterminal.c(42): error C141: syntax error near ']'
+Target not created
+Build target 'Target 1'
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(12): warning C182: pointer to different objects
+Switch_serialterminal.c(30): error C267: 'SERIAL_TRANSMIT': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling Switch_serialterminal.c...
+Switch_serialterminal.c(12): warning C182: pointer to different objects
+Switch_serialterminal.c(30): error C267: 'SERIAL_TRANSMIT': requires ANSI-style prototype
+Target not created

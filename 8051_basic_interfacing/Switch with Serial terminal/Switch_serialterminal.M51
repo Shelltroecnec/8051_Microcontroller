@@ -1,0 +1,236 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/24/2022  18:44:45  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, Switch_serialterminal.obj TO Switch_serialterminal RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  Switch_serialterminal.obj (SWITCH_SERIALTERMINAL)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?OFFX256)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDXDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIXDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDPDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIPDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDCODE)
+
+
+LINK MAP OF MODULE:  Switch_serialterminal (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000BH     UNIT         ?DT?SWITCH_SERIALTERMINAL
+            DATA    0013H     0005H     UNIT         _DATA_GROUP_
+            IDATA   0018H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00EAH     UNIT         ?C?LIB_CODE
+            CODE    08EAH     008CH     UNIT         ?C_C51STARTUP
+            CODE    0976H     003EH     UNIT         ?PR?_DISPLAY?SWITCH_SERIALTERMINAL
+            CODE    09B4H     0028H     UNIT         ?PR?MAIN?SWITCH_SERIALTERMINAL
+            CODE    09DCH     0019H     UNIT         ?CO?SWITCH_SERIALTERMINAL
+            CODE    09F5H     000EH     UNIT         ?C_INITSEG
+            CODE    0A03H     000CH     UNIT         ?PR?SERIAL_INIT?SWITCH_SERIALTERMINAL
+            CODE    0A0FH     0008H     UNIT         ?PR?_SERIAL_TRANSMIT?SWITCH_SERIALTERMINAL
+
+
+
+OVERLAY MAP OF MODULE:   Switch_serialterminal (?C_STARTUP)
+
+
+SEGMENT                                            DATA_GROUP 
+  +--> CALLED SEGMENT                            START    LENGTH
+----------------------------------------------------------------
+?C_C51STARTUP                                    -----    -----
+  +--> ?PR?MAIN?SWITCH_SERIALTERMINAL
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/24/2022  18:44:45  PAGE 2
+
+
+  +--> ?C_INITSEG
+
+?PR?MAIN?SWITCH_SERIALTERMINAL                   -----    -----
+  +--> ?PR?SERIAL_INIT?SWITCH_SERIALTERMINAL
+  +--> ?CO?SWITCH_SERIALTERMINAL
+  +--> ?PR?_DISPLAY?SWITCH_SERIALTERMINAL
+  +--> ?PR?_SERIAL_TRANSMIT?SWITCH_SERIALTER...
+
+?PR?_DISPLAY?SWITCH_SERIALTERMINAL               0013H    0005H
+  +--> ?PR?_SERIAL_TRANSMIT?SWITCH_SERIALTER...
+
+
+
+SYMBOL TABLE OF MODULE:  Switch_serialterminal (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:08EAH         SEGMENT       ?C_C51STARTUP
+  I:0018H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:08EDH         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:08EAH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:08EAH         LINE#         133
+  C:08ECH         LINE#         134
+  C:08EDH         LINE#         135
+  C:08EEH         LINE#         136
+  C:08F0H         LINE#         185
+  C:08F3H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        SWITCH_SERIALTERMINAL
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:0A0FH         PUBLIC        _SERIAL_TRANSMIT
+  B:0098H.1       PUBLIC        TI
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/24/2022  18:44:45  PAGE 3
+
+
+  C:09B4H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:008DH         PUBLIC        TH1
+  B:0090H.0       PUBLIC        SWITCH
+  B:0088H.6       PUBLIC        TR1
+  C:0A03H         PUBLIC        SERIAL_INIT
+  D:0008H         PUBLIC        i
+  D:000AH         PUBLIC        msg1
+  D:000DH         PUBLIC        msg2
+  C:0976H         PUBLIC        _display
+  -------         PROC          MAIN
+  C:09B4H         LINE#         9
+  C:09B4H         LINE#         10
+  C:09B4H         LINE#         11
+  C:09B7H         LINE#         12
+  C:09C0H         LINE#         13
+  C:09C9H         LINE#         15
+  C:09CCH         LINE#         16
+  C:09CCH         LINE#         17
+  C:09CEH         LINE#         18
+  C:09CEH         LINE#         19
+  C:09D0H         LINE#         21
+  C:09D0H         LINE#         22
+  C:09D8H         LINE#         23
+  C:09DBH         LINE#         24
+  C:09DBH         LINE#         25
+  -------         ENDPROC       MAIN
+  -------         PROC          _DISPLAY
+  D:0013H         SYMBOL        p
+  -------         DO            
+  D:0016H         SYMBOL        i
+  -------         ENDDO         
+  C:0976H         LINE#         26
+  C:097CH         LINE#         27
+  C:097CH         LINE#         29
+  C:0995H         LINE#         30
+  -------         ENDPROC       _DISPLAY
+  -------         PROC          SERIAL_INIT
+  C:0A03H         LINE#         32
+  C:0A03H         LINE#         33
+  C:0A03H         LINE#         34
+  C:0A06H         LINE#         35
+  C:0A09H         LINE#         36
+  C:0A0CH         LINE#         37
+  C:0A0EH         LINE#         38
+  -------         ENDPROC       SERIAL_INIT
+  -------         PROC          _SERIAL_TRANSMIT
+  D:0007H         SYMBOL        a
+  C:0A0FH         LINE#         40
+  C:0A0FH         LINE#         41
+  C:0A0FH         LINE#         42
+  C:0A11H         LINE#         43
+  C:0A14H         LINE#         44
+  C:0A16H         LINE#         45
+  -------         ENDPROC       _SERIAL_TRANSMIT
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/24/2022  18:44:45  PAGE 4
+
+
+  -------         ENDMOD        SWITCH_SERIALTERMINAL
+
+  -------         MODULE        ?C?CLDPTR
+  C:0800H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?OFFX256
+  C:0819H         PUBLIC        ?C?OFFX256
+  -------         ENDMOD        ?C?OFFX256
+
+  -------         MODULE        ?C?PLDOPTR
+  C:082AH         PUBLIC        ?C?PLDOPTR
+  -------         ENDMOD        ?C?PLDOPTR
+
+  -------         MODULE        ?C?PLDIOPTR
+  C:085AH         PUBLIC        ?C?PLDIOPTR
+  -------         ENDMOD        ?C?PLDIOPTR
+
+  -------         MODULE        ?C?PLDIDATA
+  C:088CH         PUBLIC        ?C?PLDIDATA
+  -------         ENDMOD        ?C?PLDIDATA
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:0895H         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?PLDXDATA
+  C:08A5H         PUBLIC        ?C?PLDXDATA
+  -------         ENDMOD        ?C?PLDXDATA
+
+  -------         MODULE        ?C?PLDIXDATA
+  C:08AEH         PUBLIC        ?C?PLDIXDATA
+  -------         ENDMOD        ?C?PLDIXDATA
+
+  -------         MODULE        ?C?PLDPDATA
+  C:08C5H         PUBLIC        ?C?PLDPDATA
+  -------         ENDMOD        ?C?PLDPDATA
+
+  -------         MODULE        ?C?PLDIPDATA
+  C:08CEH         PUBLIC        ?C?PLDIPDATA
+  -------         ENDMOD        ?C?PLDIPDATA
+
+  -------         MODULE        ?C?PLDCODE
+  C:08DEH         PUBLIC        ?C?PLDCODE
+  -------         ENDMOD        ?C?PLDCODE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00AFH BYTE ( 8%) *
+******************************************************************************
+
+Program Size: data=25.0 xdata=0 code=538
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

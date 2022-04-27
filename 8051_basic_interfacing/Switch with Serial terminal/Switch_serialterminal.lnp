@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"Switch_serialterminal.obj" 
+TO "Switch_serialterminal" 
+RAMSIZE(256) 

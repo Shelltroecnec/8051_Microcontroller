@@ -1,0 +1,58 @@
+C51 COMPILER V9.50a   SWITCH_SERIALTERMINAL                                                03/24/2022 18:58:50 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE SWITCH_SERIALTERMINAL
+OBJECT MODULE PLACED IN Switch_serialterminal.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Switch_serialterminal.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sbit SWITCH = P1^0;
+   3          void SERIAL_INIT(void);
+   4          void SERIAL_TRANSMIT();
+   5          void display(unsigned char *p[]);
+   6          char msg1[] = "hi";
+   7          char msg2[] = "there";
+   8          int i;
+   9          void main()
+  10          {
+  11   1        SERIAL_INIT();
+  12   1        display("Please Give the inputs !");
+*** WARNING C182 IN LINE 12 OF Switch_serialterminal.c: pointer to different objects
+  13   1        display(0x0d);
+  14   1        
+  15   1        if(SWITCH==0)
+  16   1      {
+  17   2        SBUF=msg1[i];
+  18   2        SERIAL_TRANSMIT();
+  19   2      }
+  20   1      else
+  21   1      {
+  22   2        SBUF=msg2[i];
+  23   2        SERIAL_TRANSMIT();
+  24   2      }
+  25   1      }
+  26          void display(unsigned char *p[])
+  27          {
+  28   1        int i;
+  29   1        while(*p[i] != '\0');
+  30   1        SERIAL_TRANSMIT(*p[i]++);
+*** ERROR C267 IN LINE 30 OF Switch_serialterminal.c: 'SERIAL_TRANSMIT': requires ANSI-style prototype
+  31   1      }
+  32          void SERIAL_INIT(void)
+  33          {
+  34   1      TMOD = 0x20; // Timer 1 mode 2
+  35   1      SCON = 0x50; // mode 1 and ren is enable
+  36   1      TH1  = 0xFD; // for 9600 baud rate
+  37   1      TR1  = 1;    // turn on the timer
+  38   1      }
+  39          
+  40          void SERIAL_TRANSMIT(unsigned char a)
+  41          {
+  42   1      SBUF = a;
+  43   1      while(TI == 0);
+  44   1      TI = 0;
+  45   1      }
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  1 ERROR(S)
