@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"rfid_access.obj" 
+TO "rfid_access" 
+RAMSIZE(256) 

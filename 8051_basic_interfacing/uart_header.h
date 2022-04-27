@@ -4,7 +4,6 @@ void serial_init(void);
 void display(unsigned char *p);
 unsigned int i;
 void new_line(void);
-unsigned char re;
 
 void tx(unsigned char b)
 {
@@ -16,8 +15,7 @@ unsigned char rx(void)
 {
 	while(RI==0);
 	RI=0;
-	re=SBUF;
-	return re;
+	return SBUF;
 }
 void delay(int t)
 {
