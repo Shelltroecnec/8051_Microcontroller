@@ -1,0 +1,66 @@
+C51 COMPILER V9.50a   SEND_WORD                                                            03/22/2022 12:16:20 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE SEND_WORD
+OBJECT MODULE PLACED IN send_word.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE send_word.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include<string.h>
+   3          void serial_init();
+   4          void tx(unsigned char ch);
+   5          void display(char a[]);
+   6          unsigned char rx(void);
+   7          unsigned char cr;
+   8          void serial_init()
+   9          {
+  10   1      TMOD = 0x20;
+  11   1      REN = 1;
+  12   1      SCON = 0x50;
+  13   1      TH1 = 0XFD;
+  14   1      TR1 = 1;
+  15   1      }
+  16          void tx(unsigned char ch)
+  17          {
+  18   1      SBUF = ch;
+  19   1      while(TI==0);
+  20   1      TI = 0;
+  21   1      }
+  22          void display(char a[])
+  23          {
+  24   1      int i;
+  25   1      for (i=0; a[i] != '\0';i++)
+  26   1      {
+  27   2      tx(a[i]);
+  28   2      }}
+  29          unsigned char rx(void)
+  30          {
+  31   1        while(RI==0);
+  32   1        cr = SBUF;
+  33   1        RI = 0;
+  34   1        return cr;
+  35   1      }
+  36          int main()
+  37          {
+  38   1      serial_init();
+  39   1      display("HELLO");
+  40   1      while(1)
+  41   1      {
+  42   2        tx(rx());
+  43   2      }}
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     89    ----
+   CONSTANT SIZE    =      6    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

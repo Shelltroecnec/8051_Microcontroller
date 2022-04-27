@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"send_word.obj" 
+TO "send_word" 
+RAMSIZE(256) 
