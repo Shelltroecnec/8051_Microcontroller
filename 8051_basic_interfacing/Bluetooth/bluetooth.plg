@@ -1,0 +1,75 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\_techsolution_MicroControllers\8051\Serial Communication\Bluetooth\bluetooth.uvproj
+Project File Date:  03/25/2022
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling bluetooth.c...
+bluetooth.c(4): error C132: '_tx': not in formal parameter list
+bluetooth.c(4): error C141: syntax error near 'unsigned'
+bluetooth.c(5): error C132: 'rx': not in formal parameter list
+bluetooth.c(5): error C141: syntax error near 'void'
+bluetooth.c(5): error C132: 'serial_init': not in formal parameter list
+bluetooth.c(8): error C132: '_tx': not in formal parameter list
+bluetooth.c(8): error C141: syntax error near '{'
+bluetooth.c(9): error C136: 'SBUF': 'void' on variable
+bluetooth.c(9): error C244: 'SBUF': can't initialize, bad type or class
+bluetooth.c(9): error C202: 'a': undefined identifier
+bluetooth.c(9): error C136: 'SBUF': 'void' on variable
+bluetooth.c(9): error C132: 'SBUF': not in formal parameter list
+bluetooth.c(10): error C141: syntax error near 'while'
+bluetooth.c(10): error C141: syntax error near '==', expected ')'
+bluetooth.c(11): error C231: 'TI': redefinition
+bluetooth.c(11): error C231: 'TI': redefinition
+bluetooth.c(12): error C141: syntax error near '}'
+bluetooth.c(19): error C141: syntax error near 't', expected ')'
+bluetooth.c(22): error C202: 't': undefined identifier
+bluetooth.c(28): error C202: 'SC0N': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling bluetooth.c...
+bluetooth.c(19): error C141: syntax error near 't', expected ')'
+bluetooth.c(22): error C202: 't': undefined identifier
+bluetooth.c(28): error C202: 'SC0N': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling bluetooth.c...
+bluetooth.c(28): error C202: 'SC0N': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling bluetooth.c...
+bluetooth.c(28): error C202: 'SC0N': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling bluetooth.c...
+bluetooth.c(28): error C202: 'SC0N': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling bluetooth.c...
+bluetooth.c(37): error C214: illegal pointer conversion
+Target not created
+Build target 'Target 1'
+compiling bluetooth.c...
+bluetooth.c(8): warning C235: parameter 1: different types
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?BLUETOOTH
+Program Size: data=9.0 xdata=0 code=109
+creating hex file from "bluetooth"...
+"bluetooth" - 0 Error(s), 2 Warning(s).
+compiling bluetooth.c...
+bluetooth.c(8): warning C235: parameter 1: different types
+bluetooth.c - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling bluetooth.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?BLUETOOTH
+Program Size: data=9.0 xdata=0 code=109
+creating hex file from "bluetooth"...
+"bluetooth" - 0 Error(s), 1 Warning(s).
