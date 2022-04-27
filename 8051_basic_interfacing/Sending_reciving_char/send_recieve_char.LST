@@ -1,0 +1,65 @@
+C51 COMPILER V9.50a   SEND_RECIEVE_CHAR                                                    03/21/2022 19:15:33 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE SEND_RECIEVE_CHAR
+OBJECT MODULE PLACED IN send_recieve_char.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE send_recieve_char.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          void SERIAL_INIT(void);
+   3          void SERIAL_TRANSMIT(unsigned char a);
+   4          unsigned char SERIAL_RECEIVE(void);
+   5          unsigned char ch;
+   6          
+   7          void main()
+   8          {
+   9   1      ch = 'A';
+  10   1      SERIAL_INIT();
+  11   1      SERIAL_TRANSMIT(ch);
+  12   1      TR1=1;
+  13   1      while(1)
+  14   1      {
+  15   2      ch = SERIAL_RECEIVE();
+  16   2      SERIAL_TRANSMIT(ch);
+  17   2      }
+  18   1      }
+  19          
+  20          void SERIAL_INIT(void)
+  21          {
+  22   1      TMOD = 0x20; // Timer 1 mode 2
+  23   1      REN =1;
+  24   1      SCON = 0x50; // mode 1 and ren is enable
+  25   1      TH1  = 0xFD; // for 9600 baud rate
+  26   1      TR1  = 1;    // turn on the timer
+  27   1      }
+  28          
+  29          void SERIAL_TRANSMIT(unsigned char a)
+  30          {
+  31   1      SBUF = a;
+  32   1      while(TI == 0);
+  33   1      TI = 0;
+  34   1      }
+  35          
+  36          unsigned char SERIAL_RECEIVE(void)
+  37          {
+  38   1      while(RI == 0);
+  39   1      ch = SBUF;
+  40   1      RI = 0; 
+  41   1      return ch; 
+  42   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     56    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

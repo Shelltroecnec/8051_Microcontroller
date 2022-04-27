@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"send_recieve_char.obj" 
+TO "send_recieve_char" 
+RAMSIZE(256) 
