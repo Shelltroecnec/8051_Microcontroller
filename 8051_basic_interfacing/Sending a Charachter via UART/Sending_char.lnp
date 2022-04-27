@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"Sending_char.obj" 
+TO "Sending_char" 
+RAMSIZE(256) 
