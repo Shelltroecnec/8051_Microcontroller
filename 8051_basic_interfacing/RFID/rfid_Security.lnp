@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"rfid_read.obj" 
+TO "rfid_Security" 
+RAMSIZE(256) 

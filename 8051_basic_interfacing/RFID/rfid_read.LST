@@ -1,0 +1,43 @@
+C51 COMPILER V9.50a   RFID_READ                                                            03/26/2022 17:27:36 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE RFID_READ
+OBJECT MODULE PLACED IN rfid_read.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE rfid_read.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include"uart_header.h"
+   3          #include"lcd-4bit-board.h"
+   4          //#define Data P2
+   5          unsigned char c;
+   6          int main()
+   7          {
+   8   1        serial_init();
+   9   1        lcd_init();
+  10   1        lcd_display("Show your Tag !");
+  11   1        lcd_cmd(0xC0);
+  12   1        while(1)
+  13   1        {
+  14   2          c = rx();
+  15   2        tx(c);
+  16   2        }
+  17   1        lcd_cmd(0x01);
+  18   1        lcd_cmd(0x80);
+  19   1        lcd_display("Thank You !");
+  20   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    355    ----
+   CONSTANT SIZE    =     28    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3      10
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

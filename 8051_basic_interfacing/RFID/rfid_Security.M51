@@ -1,0 +1,327 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/26/2022  17:27:37  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, rfid_read.obj TO rfid_Security RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  rfid_read.obj (RFID_READ)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?IMUL)
+
+
+LINK MAP OF MODULE:  rfid_Security (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         _DATA_GROUP_
+            DATA    000EH     0003H     UNIT         ?DT?_DISPLAY?RFID_READ
+            DATA    0011H     0003H     UNIT         ?DT?RFID_READ
+            IDATA   0014H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0032H     UNIT         ?PR?_LCD_DISPLAY?RFID_READ
+            CODE    0832H     0032H     UNIT         ?PR?_LCD_DELAY?RFID_READ
+            CODE    0864H     002DH     UNIT         ?PR?_DISPLAY?RFID_READ
+            CODE    0891H     002DH     UNIT         ?PR?_LCD_DATA?RFID_READ
+            CODE    08BEH     002BH     UNIT         ?C?LIB_CODE
+            CODE    08E9H     0025H     UNIT         ?PR?_DELAY?RFID_READ
+            CODE    090EH     0021H     UNIT         ?PR?_LCD_CMD?RFID_READ
+            CODE    092FH     001EH     UNIT         ?PR?MAIN?RFID_READ
+            CODE    094DH     001CH     UNIT         ?CO?RFID_READ
+            CODE    0969H     0019H     UNIT         ?PR?LCD_INIT?RFID_READ
+            CODE    0982H     000EH     UNIT         ?PR?SERIAL_INIT?RFID_READ
+            CODE    0990H     000CH     UNIT         ?C_C51STARTUP
+            CODE    099CH     000AH     UNIT         ?PR?NEW_LINE?RFID_READ
+            CODE    09A6H     0008H     UNIT         ?PR?_TX?RFID_READ
+            CODE    09AEH     0008H     UNIT         ?PR?RX?RFID_READ
+
+
+
+OVERLAY MAP OF MODULE:   rfid_Security (?C_STARTUP)
+
+
+SEGMENT                              DATA_GROUP 
+  +--> CALLED SEGMENT              START    LENGTH
+--------------------------------------------------
+?C_C51STARTUP                      -----    -----
+  +--> ?PR?MAIN?RFID_READ
+
+?PR?MAIN?RFID_READ                 -----    -----
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/26/2022  17:27:37  PAGE 2
+
+
+  +--> ?PR?SERIAL_INIT?RFID_READ
+  +--> ?PR?LCD_INIT?RFID_READ
+  +--> ?CO?RFID_READ
+  +--> ?PR?_LCD_DISPLAY?RFID_READ
+  +--> ?PR?_LCD_CMD?RFID_READ
+  +--> ?PR?RX?RFID_READ
+  +--> ?PR?_TX?RFID_READ
+
+?PR?LCD_INIT?RFID_READ             -----    -----
+  +--> ?PR?_LCD_CMD?RFID_READ
+
+?PR?_LCD_CMD?RFID_READ             0008H    0001H
+  +--> ?PR?_LCD_DELAY?RFID_READ
+
+?PR?_LCD_DISPLAY?RFID_READ         0008H    0005H
+  +--> ?PR?_LCD_DATA?RFID_READ
+
+?PR?_LCD_DATA?RFID_READ            000DH    0001H
+  +--> ?PR?_LCD_DELAY?RFID_READ
+
+
+
+SYMBOL TABLE OF MODULE:  rfid_Security (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0990H         SEGMENT       ?C_C51STARTUP
+  I:0014H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0993H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0990H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0990H         LINE#         133
+  C:0992H         LINE#         134
+  C:0993H         LINE#         135
+  C:0994H         LINE#         136
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/26/2022  17:27:37  PAGE 3
+
+
+  C:0996H         LINE#         185
+  C:0999H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        RFID_READ
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0800H         PUBLIC        _lcd_display
+  C:08E9H         PUBLIC        _delay
+  B:00A0H.5       PUBLIC        EN
+  C:0982H         PUBLIC        serial_init
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  B:00A0H.4       PUBLIC        RS
+  C:092FH         PUBLIC        main
+  C:083EH         PUBLIC        _lcd_delay
+  C:0891H         PUBLIC        _lcd_data
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  C:090EH         PUBLIC        _lcd_cmd
+  C:0969H         PUBLIC        lcd_init
+  D:008DH         PUBLIC        TH1
+  C:099CH         PUBLIC        new_line
+  B:0088H.6       PUBLIC        TR1
+  D:0011H         PUBLIC        c
+  B:0098H.4       PUBLIC        REN
+  D:0012H         PUBLIC        i
+  C:09AEH         PUBLIC        rx
+  C:09A6H         PUBLIC        _tx
+  C:0864H         PUBLIC        _display
+  -------         PROC          _TX
+  D:0007H         SYMBOL        b
+  C:09A6H         LINE#         8
+  C:09A6H         LINE#         9
+  C:09A6H         LINE#         10
+  C:09A8H         LINE#         11
+  C:09ABH         LINE#         12
+  C:09ADH         LINE#         13
+  -------         ENDPROC       _TX
+  -------         PROC          RX
+  C:09AEH         LINE#         14
+  C:09AEH         LINE#         15
+  C:09AEH         LINE#         16
+  C:09B1H         LINE#         17
+  C:09B3H         LINE#         18
+  C:09B5H         LINE#         19
+  -------         ENDPROC       RX
+  -------         PROC          _DELAY
+  D:0002H         SYMBOL        t
+  -------         DO            
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:08E9H         LINE#         20
+  C:08EDH         LINE#         21
+  C:08EDH         LINE#         23
+  C:090DH         LINE#         24
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/26/2022  17:27:37  PAGE 4
+
+
+  -------         ENDPROC       _DELAY
+  -------         PROC          SERIAL_INIT
+  C:0982H         LINE#         25
+  C:0982H         LINE#         26
+  C:0982H         LINE#         27
+  C:0985H         LINE#         28
+  C:0987H         LINE#         29
+  C:098AH         LINE#         30
+  C:098DH         LINE#         31
+  C:098FH         LINE#         32
+  -------         ENDPROC       SERIAL_INIT
+  -------         PROC          _DISPLAY
+  D:000EH         SYMBOL        p
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0864H         LINE#         33
+  C:086AH         LINE#         34
+  C:086AH         LINE#         36
+  C:0878H         LINE#         37
+  C:0878H         LINE#         38
+  C:0889H         LINE#         39
+  C:0890H         LINE#         40
+  -------         ENDPROC       _DISPLAY
+  -------         PROC          NEW_LINE
+  C:099CH         LINE#         41
+  C:099CH         LINE#         42
+  C:099CH         LINE#         43
+  C:09A1H         LINE#         44
+  -------         ENDPROC       NEW_LINE
+  -------         PROC          LCD_INIT
+  C:0969H         LINE#         23
+  C:0969H         LINE#         24
+  C:096EH         LINE#         25
+  C:0973H         LINE#         26
+  C:0978H         LINE#         27
+  C:097DH         LINE#         28
+  -------         ENDPROC       LCD_INIT
+  -------         PROC          _LCD_CMD
+  D:0008H         SYMBOL        cmd
+  C:090EH         LINE#         31
+  C:0910H         LINE#         32
+  C:0919H         LINE#         33
+  C:0919H         LINE#         35
+  C:0919H         LINE#         36
+  C:091CH         LINE#         37
+  C:091EH         LINE#         38
+  C:0921H         LINE#         40
+  C:0923H         LINE#         41
+  C:0923H         LINE#         43
+  C:0923H         LINE#         44
+  C:0926H         LINE#         45
+  C:0928H         LINE#         46
+  -------         ENDPROC       _LCD_CMD
+  -------         PROC          _LCD_DATA
+  D:000DH         SYMBOL        d
+  C:0891H         LINE#         49
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/26/2022  17:27:37  PAGE 5
+
+
+  C:0893H         LINE#         50
+  C:08A0H         LINE#         51
+  C:08A2H         LINE#         53
+  C:08A2H         LINE#         54
+  C:08A5H         LINE#         55
+  C:08A7H         LINE#         56
+  C:08AAH         LINE#         58
+  C:08B0H         LINE#         59
+  C:08B2H         LINE#         61
+  C:08B2H         LINE#         62
+  C:08B5H         LINE#         63
+  C:08B7H         LINE#         64
+  -------         ENDPROC       _LCD_DATA
+  -------         PROC          _LCD_DISPLAY
+  D:0008H         SYMBOL        p
+  -------         DO            
+  D:000BH         SYMBOL        i
+  -------         ENDDO         
+  C:0800H         LINE#         67
+  C:0806H         LINE#         69
+  C:0816H         LINE#         70
+  C:0827H         LINE#         71
+  C:0831H         LINE#         72
+  -------         ENDPROC       _LCD_DISPLAY
+  C:0838H         SYMBOL        L?0043
+  C:083AH         SYMBOL        L?0044
+  -------         PROC          L?0042
+  -------         ENDPROC       L?0042
+  C:0838H         SYMBOL        L?0043
+  C:083AH         SYMBOL        L?0044
+  -------         PROC          _LCD_DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:083EH         LINE#         74
+  C:083EH         LINE#         76
+  C:084EH         LINE#         77
+  C:085CH         LINE#         78
+  C:0863H         LINE#         79
+  -------         ENDPROC       _LCD_DELAY
+  -------         PROC          MAIN
+  C:092FH         LINE#         6
+  C:092FH         LINE#         7
+  C:092FH         LINE#         8
+  C:0932H         LINE#         9
+  C:0935H         LINE#         10
+  C:093EH         LINE#         11
+  C:0943H         LINE#         12
+  C:0943H         LINE#         13
+  C:0943H         LINE#         14
+  C:0948H         LINE#         15
+  C:094BH         LINE#         16
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        RFID_READ
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/26/2022  17:27:37  PAGE 6
+
+
+  -------         MODULE        ?C?CLDPTR
+  C:08BEH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?IMUL
+  C:08D7H         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?RFID_READ
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DISPLAY?RFID_READ
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?NEW_LINE?RFID_READ
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 018EH BYTE (19%) *
+******************************************************************************
+
+Program Size: data=21.0 xdata=0 code=441
+LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)
