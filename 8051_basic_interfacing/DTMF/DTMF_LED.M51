@@ -1,0 +1,175 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/02/2022  17:10:06  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, DTMF_LED.obj TO DTMF_LED RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  DTMF_LED.obj (DTMF_LED)
+
+
+LINK MAP OF MODULE:  DTMF_LED (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00E3H     UNIT         ?PR?MAIN?DTMF_LED
+            CODE    08E3H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   DTMF_LED (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?DTMF_LED
+
+
+
+SYMBOL TABLE OF MODULE:  DTMF_LED (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:08E3H         SEGMENT       ?C_C51STARTUP
+  I:0008H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:08E6H         SYMBOL        IDATALOOP
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/02/2022  17:10:06  PAGE 2
+
+
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:08E3H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:08E3H         LINE#         133
+  C:08E5H         LINE#         134
+  C:08E6H         LINE#         135
+  C:08E7H         LINE#         136
+  C:08E9H         LINE#         185
+  C:08ECH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        DTMF_LED
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:0800H         PUBLIC        main
+  B:0090H.0       PUBLIC        led
+  B:00A0H.0       PUBLIC        D1
+  B:00A0H.1       PUBLIC        D2
+  B:00A0H.2       PUBLIC        D3
+  B:00A0H.3       PUBLIC        D4
+  -------         PROC          MAIN
+  C:0800H         LINE#         7
+  C:0800H         LINE#         8
+  C:0800H         LINE#         9
+  C:0802H         LINE#         10
+  C:0802H         LINE#         11
+  C:0802H         LINE#         12
+  C:080EH         LINE#         13
+  C:080EH         LINE#         14
+  C:0810H         LINE#         15
+  C:0810H         LINE#         16
+  C:081CH         LINE#         17
+  C:081CH         LINE#         18
+  C:081EH         LINE#         19
+  C:081EH         LINE#         20
+  C:082AH         LINE#         21
+  C:082AH         LINE#         22
+  C:082CH         LINE#         23
+  C:082CH         LINE#         24
+  C:0838H         LINE#         25
+  C:0838H         LINE#         26
+  C:083AH         LINE#         27
+  C:083AH         LINE#         28
+  C:0846H         LINE#         29
+  C:0846H         LINE#         30
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/02/2022  17:10:06  PAGE 3
+
+
+  C:0848H         LINE#         31
+  C:0848H         LINE#         32
+  C:0854H         LINE#         33
+  C:0854H         LINE#         34
+  C:0856H         LINE#         35
+  C:0856H         LINE#         36
+  C:0862H         LINE#         37
+  C:0862H         LINE#         38
+  C:0864H         LINE#         39
+  C:0864H         LINE#         40
+  C:0870H         LINE#         41
+  C:0870H         LINE#         42
+  C:0872H         LINE#         43
+  C:0872H         LINE#         44
+  C:087EH         LINE#         45
+  C:087EH         LINE#         46
+  C:0880H         LINE#         47
+  C:0880H         LINE#         48
+  C:088CH         LINE#         49
+  C:088CH         LINE#         50
+  C:088EH         LINE#         51
+  C:088EH         LINE#         52
+  C:089AH         LINE#         53
+  C:089AH         LINE#         54
+  C:089CH         LINE#         55
+  C:089CH         LINE#         56
+  C:08A8H         LINE#         57
+  C:08A8H         LINE#         58
+  C:08AAH         LINE#         59
+  C:08AAH         LINE#         60
+  C:08B6H         LINE#         61
+  C:08B6H         LINE#         62
+  C:08B8H         LINE#         63
+  C:08B8H         LINE#         64
+  C:08C4H         LINE#         65
+  C:08C4H         LINE#         66
+  C:08C6H         LINE#         67
+  C:08C6H         LINE#         68
+  C:08DEH         LINE#         69
+  C:08DEH         LINE#         70
+  C:08E0H         LINE#         71
+  C:08E0H         LINE#         72
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        DTMF_LED
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00F2H BYTE (11%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=242
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
