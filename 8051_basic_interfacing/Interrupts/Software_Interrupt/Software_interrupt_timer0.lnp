@@ -1,0 +1,4 @@
+"STARTUP.obj",
+".\Software_Interrupt_timer0.obj" 
+TO "Software_interrupt_timer0" 
+RAMSIZE(256) 
