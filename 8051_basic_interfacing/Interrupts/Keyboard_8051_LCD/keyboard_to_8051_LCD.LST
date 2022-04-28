@@ -1,0 +1,129 @@
+C51 COMPILER V9.50a   KEYBOARD_TO_8051_LCD                                                 10/13/2021 23:44:20 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE KEYBOARD_TO_8051_LCD
+OBJECT MODULE PLACED IN keyboard_to_8051_LCD.OBJ
+COMPILER INVOKED BY: C:\Program Files (x86)\C51\BIN\C51.EXE keyboard_to_8051_LCD.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sbit RS = P3^4;
+   3          sbit RW = P3^5;
+   4          sbit EN = P3^6;
+   5          
+   6          void SERIAL_INIT(void);
+   7          void SERIAL_TRANSMIT(unsigned char a);
+   8          unsigned char SERIAL_RECEIVE(void);
+   9          unsigned char ch;
+  10          void LCD_INIT(void);
+  11          void LCD_COMMAND(unsigned int a);
+  12          void LCD_DATA(unsigned int b);
+  13          void LCD_DELAY(unsigned int a);
+  14          void LCD_MESSAGE(unsigned char *ch);
+  15          
+  16          void ISR(void)interrupt 4
+  17          { 
+  18   1      ch = SERIAL_RECEIVE();
+  19   1      SERIAL_TRANSMIT(ch);
+  20   1      while(1);
+  21   1      }
+  22          
+  23          
+  24          void main()
+  25          {
+  26   1      P2 = 0x00;
+  27   1      P3 = 0x00; 
+  28   1      LCD_INIT();
+  29   1      ch = 'A';
+  30   1      SERIAL_INIT();
+  31   1      SERIAL_TRANSMIT(ch);
+  32   1      EA=1;
+  33   1      ES=1;
+  34   1      LCD_MESSAGE("Embedded Systems");
+  35   1      LCD_DELAY(1);
+  36   1      while(1);
+  37   1      }
+  38          
+  39          void LCD_INIT(void)
+  40          {
+  41   1      LCD_COMMAND(0x01); // clear the lcd display
+  42   1      LCD_COMMAND(0x06); // move cursor to the left
+  43   1      LCD_COMMAND(0x0C); // cursor off lcd on
+  44   1      LCD_COMMAND(0x38); // 5x7 matrix
+  45   1      LCD_COMMAND(0x80); // take cursor to the beginning
+  46   1      }
+  47          
+  48          void LCD_COMMAND(unsigned int a)
+  49          {
+  50   1      P2 = a;
+  51   1      RS = 0; // command mode
+  52   1      RW = 0; // write operation
+  53   1      EN = 1; // high pulse
+  54   1      LCD_DELAY(1);
+  55   1      EN = 0; // low pulse 
+C51 COMPILER V9.50a   KEYBOARD_TO_8051_LCD                                                 10/13/2021 23:44:20 PAGE 2   
+
+  56   1      }
+  57          
+  58          void LCD_DATA(unsigned int b)
+  59          {
+  60   1      P2 = b;
+  61   1      RS = 1; // data mode
+  62   1      RW = 0; // write operation
+  63   1      EN = 1; // high pulse
+  64   1      LCD_DELAY(1);
+  65   1      EN = 0; // low pulse 
+  66   1      }
+  67          
+  68          void LCD_DELAY(unsigned int a)
+  69          {
+  70   1      unsigned int b;
+  71   1      for(b=0;b<=1234*a;b++);
+  72   1      }
+  73          
+  74          void LCD_MESSAGE(unsigned char *ch)
+  75          {
+  76   1      while(*ch != '\0')
+  77   1      {
+  78   2      LCD_DATA(*ch);
+  79   2      ch++;
+  80   2      }
+  81   1      }
+  82          
+  83          void SERIAL_INIT(void)
+  84          {
+  85   1      TMOD = 0x20; // Timer 1 mode 2
+  86   1      SCON = 0x50; // mode 1 and ren is enable
+  87   1      TH1  = 0xFD; // for 9600 baud rate
+  88   1      TR1  = 1;    // turn on the timer
+  89   1      }
+  90          
+  91          void SERIAL_TRANSMIT(unsigned char a)
+  92          {
+  93   1      SBUF = a;
+  94   1      while(TI == 0);
+  95   1      TI = 0;
+  96   1      }
+  97          
+  98          unsigned char SERIAL_RECEIVE(void)
+  99          {
+ 100   1      while(RI == 0);
+ 101   1      ch = SBUF;
+ 102   1      RI = 0; 
+ 103   1      return ch; 
+ 104   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    238    ----
+   CONSTANT SIZE    =     17    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

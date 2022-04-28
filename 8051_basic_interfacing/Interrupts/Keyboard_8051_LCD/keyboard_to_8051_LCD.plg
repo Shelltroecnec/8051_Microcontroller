@@ -1,0 +1,95 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\Shahid_techsolutions\8051\Interrupts\13-10-2021\keyboard_to_8051_LCD.uvproj
+Project File Date:  10/13/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling keyboard_to_8051_LCD.c...
+linking...
+Program Size: data=12.0 xdata=0 code=228
+creating hex file from "keyboard_to_8051_LCD"...
+"keyboard_to_8051_LCD" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling keyboard_to_8051_LCD.c...
+linking...
+Program Size: data=12.0 xdata=0 code=228
+creating hex file from "keyboard_to_8051_LCD"...
+"keyboard_to_8051_LCD" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling keyboard_to_8051_LCD.c...
+keyboard_to_8051_LCD.c(15): error C136: 'ISR': 'void' on variable
+keyboard_to_8051_LCD.c(15): error C129: missing ';' before 'keyboard_LCD'
+Target not created
+Build target 'Target 1'
+compiling keyboard_to_8051_LCD.c...
+keyboard_to_8051_LCD.c(15): error C136: 'ISR': 'void' on variable
+keyboard_to_8051_LCD.c(15): error C129: missing ';' before 'keyboard_LCD'
+Target not created
+Build target 'Target 1'
+compiling keyboard_to_8051_LCD.c...
+keyboard_to_8051_LCD.c(15): error C136: 'ISR': 'void' on variable
+keyboard_to_8051_LCD.c(15): error C129: missing ';' before 'keyboard_LCD'
+Target not created
+Build target 'Target 1'
+compiling keyboard_to_8051_LCD.c...
+keyboard_to_8051_LCD.c(16): error C136: 'ISR': 'void' on variable
+keyboard_to_8051_LCD.c(16): error C129: missing ';' before 'keyboard_LCD'
+Target not created
+Build target 'Target 1'
+compiling keyboard_to_8051_LCD.c...
+keyboard_to_8051_LCD.c(16): error C141: syntax error near ';'
+keyboard_to_8051_LCD.c(18): error C231: 'SERIAL_INIT': redefinition
+keyboard_to_8051_LCD.c(19): error C231: '_SERIAL_TRANSMIT': redefinition
+keyboard_to_8051_LCD.c(21): error C141: syntax error near 'while'
+keyboard_to_8051_LCD.c(21): error C141: syntax error near '1'
+keyboard_to_8051_LCD.c(23): error C231: 'ch': redefinition
+keyboard_to_8051_LCD.c(24): error C231: '_SERIAL_TRANSMIT': redefinition
+keyboard_to_8051_LCD.c(25): error C141: syntax error near '}'
+keyboard_to_8051_LCD.c(42): error C141: syntax error near 'void'
+Target not created
+Build target 'Target 1'
+compiling keyboard_to_8051_LCD.c...
+keyboard_to_8051_LCD.c(16): error C141: syntax error near ';'
+keyboard_to_8051_LCD.c(18): error C231: 'SERIAL_INIT': redefinition
+keyboard_to_8051_LCD.c(19): error C231: '_SERIAL_TRANSMIT': redefinition
+keyboard_to_8051_LCD.c(20): error C141: syntax error near 'while'
+keyboard_to_8051_LCD.c(20): error C141: syntax error near '1'
+keyboard_to_8051_LCD.c(22): error C231: 'ch': redefinition
+keyboard_to_8051_LCD.c(23): error C231: '_SERIAL_TRANSMIT': redefinition
+keyboard_to_8051_LCD.c(24): error C141: syntax error near '}'
+keyboard_to_8051_LCD.c(41): error C141: syntax error near 'void'
+Target not created
+Build target 'Target 1'
+compiling keyboard_to_8051_LCD.c...
+keyboard_to_8051_LCD.c(16): error C141: syntax error near ';'
+keyboard_to_8051_LCD.c(18): error C141: syntax error near '1'
+keyboard_to_8051_LCD.c(20): error C231: 'ch': redefinition
+keyboard_to_8051_LCD.c(21): error C231: '_SERIAL_TRANSMIT': redefinition
+keyboard_to_8051_LCD.c(22): error C141: syntax error near '}'
+keyboard_to_8051_LCD.c(40): error C141: syntax error near 'void'
+Target not created
+Build target 'Target 1'
+compiling keyboard_to_8051_LCD.c...
+keyboard_to_8051_LCD.c(16): error C141: syntax error near ';'
+keyboard_to_8051_LCD.c(18): error C141: syntax error near '1'
+keyboard_to_8051_LCD.c(20): error C231: 'ch': redefinition
+keyboard_to_8051_LCD.c(21): error C231: '_SERIAL_TRANSMIT': redefinition
+keyboard_to_8051_LCD.c(22): error C141: syntax error near '}'
+keyboard_to_8051_LCD.c(40): error C141: syntax error near 'void'
+Target not created
+Build target 'Target 1'
+compiling keyboard_to_8051_LCD.c...
+keyboard_to_8051_LCD.c(21): error C141: syntax error near '}'
+keyboard_to_8051_LCD.c(39): error C141: syntax error near 'void'
+Target not created
+Build target 'Target 1'
+compiling keyboard_to_8051_LCD.c...
+linking...
+Program Size: data=13.0 xdata=0 code=316
+creating hex file from "keyboard_to_8051_LCD"...
+"keyboard_to_8051_LCD" - 0 Error(s), 0 Warning(s).

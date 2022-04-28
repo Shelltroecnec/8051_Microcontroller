@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"keyboard_to_8051_LCD.obj" 
+TO "keyboard_to_8051_LCD" 
+RAMSIZE(256) 
