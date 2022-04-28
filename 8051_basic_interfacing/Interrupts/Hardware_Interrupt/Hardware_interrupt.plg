@@ -1,0 +1,39 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\Shahid_techsolutions\8051\Interrupts\07-10-2021\Hardware_interrupt.uvproj
+Project File Date:  10/07/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling hardware_interrupt.c...
+hardware_interrupt.c(2): error C146: 'P': invalid base address
+hardware_interrupt.c(4): error C141: syntax error near ';'
+hardware_interrupt.c(6): error C247: non-address/-constant initializer
+hardware_interrupt.c(7): error C141: syntax error near '}'
+hardware_interrupt.c(24): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling hardware_interrupt.c...
+hardware_interrupt.c(2): error C146: 'P': invalid base address
+hardware_interrupt.c(4): error C141: syntax error near ';'
+hardware_interrupt.c(6): error C247: non-address/-constant initializer
+hardware_interrupt.c(7): error C141: syntax error near '}'
+hardware_interrupt.c(24): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling hardware_interrupt.c...
+hardware_interrupt.c(2): error C146: 'P': invalid base address
+hardware_interrupt.c(4): error C141: syntax error near ';'
+hardware_interrupt.c(6): error C247: non-address/-constant initializer
+hardware_interrupt.c(7): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling hardware_interrupt.c...
+linking...
+Program Size: data=9.0 xdata=0 code=85
+creating hex file from "Hardware_interrupt"...
+"Hardware_interrupt" - 0 Error(s), 0 Warning(s).

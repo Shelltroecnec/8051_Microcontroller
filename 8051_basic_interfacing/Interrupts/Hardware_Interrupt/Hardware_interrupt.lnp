@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"hardware_interrupt.obj" 
+TO "Hardware_interrupt" 
+RAMSIZE(256) 
