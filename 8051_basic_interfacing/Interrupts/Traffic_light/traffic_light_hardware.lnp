@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"Traffic_light_nodes.obj" 
+TO "traffic_light_hardware" 
+RAMSIZE(256) 

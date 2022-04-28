@@ -1,0 +1,63 @@
+C51 COMPILER V9.50a   TRAFFIC_LIGHT_EXTERNAL                                               04/08/2022 17:29:42 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE TRAFFIC_LIGHT_EXTERNAL
+OBJECT MODULE PLACED IN traffic_light_external.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE traffic_light_external.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          //Traffic Light control using Interrupt 0
+   2          
+   3          #include<reg51.h>
+   4          sbit red = P1^0;
+   5          sbit yellow = P1^1;
+   6          sbit green = P1^2;
+   7          void delay(unsigned int t);
+   8          void ISR(void)interrupt 0
+   9          {
+  10   1      red = 0;
+  11   1      yellow = 1;
+  12   1      green = 1;
+  13   1      delay(5);
+  14   1      red = 1;
+  15   1      yellow = 0;
+  16   1      green = 1;
+  17   1      delay(1);
+  18   1      red = 1;
+  19   1      yellow = 1;
+  20   1      green = 0;
+  21   1      delay(5);
+  22   1      }
+  23          int main()
+  24          {
+  25   1      P1 = 0x00;
+  26   1      EA = 1; //Enabling the interrupt
+  27   1      EX0 = 1; //Enabling External Interrupt 0
+  28   1      while(1)
+  29   1      {
+  30   2      red = 1;
+  31   2      yellow = 1;
+  32   2      green = 1;
+  33   2      }}
+  34          void delay(unsigned int t)
+  35          {
+  36   1       int i,j;
+  37   1      for(i=0;i<=100*t;i++)
+  38   1      {
+  39   2      for(j=0;j<=1275;j++);
+  40   2      }}
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    155    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
