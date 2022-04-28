@@ -1,0 +1,97 @@
+C51 COMPILER V9.50a   GSM_SWT                                                              04/11/2022 14:57:20 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE GSM_SWT
+OBJECT MODULE PLACED IN GSM_SWT.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE GSM_SWT.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          /*************************************
+   2          Hardware requirement :
+   3          >8051 Mico-Controller kit
+   4          >GSM module (SIM900A)
+   5          >Programmer (TTL - MAX232 Converter)
+   6          >SIM card
+   7          >Power Adapter for both Module/kit
+   8          **************************************/
+   9          
+  10          #include<reg51.h>
+  11          #include"uart_header.h"
+  12          void string(unsigned char *p);
+  13          void sms(unsigned char *num, unsigned char *msg);
+  14          sbit SWT1 = P3^4;
+  15          sbit SWT2 = P3^5;
+  16          sbit SWT3 = P3^2;
+  17          sbit SWT4 = P3^3;
+  18          
+  19          void main()
+  20          {
+  21   1      serial_init();
+  22   1      delay(10);
+  23   1      display("GSM Interface with 8051");
+  24   1      new_line();
+  25   1      while(1)
+  26   1      {
+  27   2      if(SWT1 == 0)
+  28   2      {
+  29   3      string("ATD9137440186");
+  30   3      tx(0x0D);
+  31   3      delay(10);
+  32   3      }
+  33   2      if(SWT2 == 0)
+  34   2      {
+  35   3      string("ATA");
+  36   3      tx(0x0D);
+  37   3      delay(10);
+  38   3      }
+  39   2      if(SWT3 == 0)
+  40   2      {
+  41   3      string("ATH");
+  42   3      tx(0x0D);
+  43   3      delay(10);
+  44   3      }
+  45   2      if(SWT4 == 0)
+  46   2      {
+  47   3      sms("9137440186","Hello-JUST TEST");
+  48   3      }}}
+  49          void string(unsigned char *p)
+  50          {
+  51   1      while(*p != '\0')
+  52   1      {
+  53   2      tx(*p++);
+  54   2      }}
+  55          void sms(unsigned char *num, unsigned char *msg)
+C51 COMPILER V9.50a   GSM_SWT                                                              04/11/2022 14:57:20 PAGE 2   
+
+  56          {
+  57   1      string("AT+CMGF=1");
+  58   1      tx(0x0D);
+  59   1      delay(10);
+  60   1      string("AT+CMGS=");
+  61   1      tx('"');
+  62   1      while(*num)
+  63   1      tx(*num++);
+  64   1      tx('"');
+  65   1      tx(0x0D);
+  66   1      delay(10);
+  67   1      while(*msg)
+  68   1      tx(*msg++);
+  69   1      tx(0x1A);
+  70   1      delay(10);
+  71   1      }
+  72          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    353    ----
+   CONSTANT SIZE    =     92    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2      12
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

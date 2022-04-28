@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"GSM_SWT.obj" 
+TO "GSM_SWT" 
+RAMSIZE(256) 
