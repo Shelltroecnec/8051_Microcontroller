@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"Enterkey_interrupt_msg.obj" 
+TO "Enterkey_interrupt_msg" 
+RAMSIZE(256) 

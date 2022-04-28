@@ -1,0 +1,206 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/12/2021  22:54:53  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\PROGRAM FILES (X86)\C51\BIN\BL51.EXE STARTUP.obj, Enterkey_interrupt_msg.obj TO Enterkey_interrupt_msg RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  Enterkey_interrupt_msg.obj (ENTERKEY_INTERRUPT_MSG)
+  C:\PROGRAM FILES (X86)\C51\LIB\C51S.LIB (?C?IMUL)
+  C:\PROGRAM FILES (X86)\C51\LIB\C51S.LIB (?C?ULCMP)
+
+
+LINK MAP OF MODULE:  Enterkey_interrupt_msg (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0005H     UNIT         ?DT?ENTERKEY_INTERRUPT_MSG
+            IDATA   000DH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0020H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+                    0026H     07DAH                  *** GAP ***
+            CODE    0800H     0044H     UNIT         ?PR?ISR?ENTERKEY_INTERRUPT_MSG
+            CODE    0844H     0023H     UNIT         ?C?LIB_CODE
+            CODE    0867H     001FH     UNIT         ?PR?_DELAY?ENTERKEY_INTERRUPT_MSG
+            CODE    0886H     000DH     UNIT         ?PR?SERIAL_RECEIVE?ENTERKEY_INTERRUPT_MSG
+            CODE    0893H     000CH     UNIT         ?C_C51STARTUP
+            CODE    089FH     000CH     UNIT         ?PR?SERIAL_INIT?ENTERKEY_INTERRUPT_MSG
+            CODE    08ABH     000BH     UNIT         ?PR?MAIN?ENTERKEY_INTERRUPT_MSG
+            CODE    08B6H     000AH     UNIT         ?PR?_SERIAL_TRANSMIT?ENTERKEY_INTERRUPT_MSG
+
+
+
+OVERLAY MAP OF MODULE:   Enterkey_interrupt_msg (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?ENTERKEY_INTERRUPT_MSG
+
+?PR?MAIN?ENTERKEY_INTERRUPT_MSG
+  +--> ?PR?SERIAL_INIT?ENTERKEY_INTERRUPT_MSG
+
+*** NEW ROOT ***************************************************
+
+?PR?ISR?ENTERKEY_INTERRUPT_MSG
+  +--> ?PR?SERIAL_RECEIVE?ENTERKEY_INTERRUPT...
+  +--> ?PR?_SERIAL_TRANSMIT?ENTERKEY_INTERRU...
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/12/2021  22:54:53  PAGE 2
+
+
+  +--> ?PR?_DELAY?ENTERKEY_INTERRUPT_MSG
+
+
+
+SYMBOL TABLE OF MODULE:  Enterkey_interrupt_msg (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0893H         SEGMENT       ?C_C51STARTUP
+  I:000DH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0896H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0893H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0893H         LINE#         133
+  C:0895H         LINE#         134
+  C:0896H         LINE#         135
+  C:0897H         LINE#         136
+  C:0899H         LINE#         185
+  C:089CH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        ENTERKEY_INTERRUPT_MSG
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A8H.7       PUBLIC        EA
+  C:0867H         PUBLIC        _delay
+  B:00A8H.4       PUBLIC        ES
+  C:08B6H         PUBLIC        _SERIAL_TRANSMIT
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:08ABH         PUBLIC        main
+  C:0886H         PUBLIC        SERIAL_RECEIVE
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0008H         PUBLIC        ch
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/12/2021  22:54:53  PAGE 3
+
+
+  D:0009H         PUBLIC        Enterkey
+  D:008DH         PUBLIC        TH1
+  B:0088H.6       PUBLIC        TR1
+  C:089FH         PUBLIC        SERIAL_INIT
+  C:0800H         PUBLIC        ISR
+  -------         PROC          ISR
+  C:0800H         LINE#         9
+  C:081DH         LINE#         11
+  C:081DH         LINE#         12
+  C:081DH         LINE#         13
+  C:0831H         LINE#         14
+  C:0831H         LINE#         15
+  C:0836H         LINE#         16
+  C:0839H         LINE#         17
+  C:0840H         LINE#         18
+  C:0842H         LINE#         19
+  -------         ENDPROC       ISR
+  -------         PROC          MAIN
+  C:08ABH         LINE#         21
+  C:08ABH         LINE#         22
+  C:08ABH         LINE#         23
+  C:08AEH         LINE#         24
+  C:08B1H         LINE#         25
+  C:08B3H         LINE#         26
+  C:08B5H         LINE#         27
+  -------         ENDPROC       MAIN
+  -------         PROC          SERIAL_INIT
+  C:089FH         LINE#         37
+  C:089FH         LINE#         38
+  C:089FH         LINE#         39
+  C:08A2H         LINE#         40
+  C:08A5H         LINE#         41
+  C:08A8H         LINE#         42
+  C:08AAH         LINE#         43
+  -------         ENDPROC       SERIAL_INIT
+  -------         PROC          _SERIAL_TRANSMIT
+  D:0007H         SYMBOL        a
+  C:08B6H         LINE#         45
+  C:08B6H         LINE#         46
+  C:08B6H         LINE#         47
+  C:08B8H         LINE#         48
+  C:08BBH         LINE#         49
+  C:08BFH         LINE#         50
+  -------         ENDPROC       _SERIAL_TRANSMIT
+  -------         PROC          SERIAL_RECEIVE
+  C:0886H         LINE#         51
+  C:0886H         LINE#         52
+  C:0886H         LINE#         53
+  C:0889H         LINE#         54
+  C:088EH         LINE#         55
+  C:0890H         LINE#         56
+  C:0892H         LINE#         57
+  -------         ENDPROC       SERIAL_RECEIVE
+  -------         PROC          _DELAY
+  D:0002H         SYMBOL        i
+  -------         DO            
+  D:0082H         SYMBOL        b
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/12/2021  22:54:53  PAGE 4
+
+
+  -------         ENDDO         
+  C:0867H         LINE#         58
+  C:086BH         LINE#         59
+  C:086BH         LINE#         61
+  C:0885H         LINE#         62
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        ENTERKEY_INTERRUPT_MSG
+
+  -------         MODULE        ?C?IMUL
+  C:0844H         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+  -------         MODULE        ?C?ULCMP
+  C:0856H         PUBLIC        ?C?ULCMP
+  -------         ENDMOD        ?C?ULCMP
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00A3H BYTE ( 7%) *
+******************************************************************************
+
+Program Size: data=14.0 xdata=0 code=198
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
